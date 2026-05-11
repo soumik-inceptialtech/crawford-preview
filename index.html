@@ -941,7 +941,7 @@ body{
 /* EXPLORE OFFERS */
 
 .explore-offers{
-    padding: 40px 20px;
+    padding: 40px 0px;
     background: #ffff;
     text-align: center;
 }
@@ -968,27 +968,28 @@ body{
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 0px;
 }
 
 /* CARD */
 
 .offer-card{
-    background: #fff;
+    background: transparent;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     transition: 0.3s ease;
     height: 520px;
 }
 
 .offer-card:hover{
     transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    //box-shadow: 0 18px 40px rgba(0,0,0,0.18);
 }
 
 .offer-card img{
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1136,7 +1137,7 @@ body{
 /* EXPLORE OFFERS */
 
 .explore-offers{
-    padding: 40px 20px;
+    padding: 40px 0px;
     background: #ffff;
     text-align: center;
 }
@@ -1163,31 +1164,26 @@ body{
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 0px;
 }
 
 /* CARD */
 
 .offer-card{
-    background: #fff;
+    background: transparent;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    //box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     transition: 0.3s ease;
     height: 520px;
 }
 
 .offer-card:hover{
     transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+
 }
 
-.offer-card img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 /* OVERLAY */
 
@@ -1288,7 +1284,7 @@ body{
     /* border-radius: 22px; */
     overflow: hidden;
 
-    background: url("journey-bg.jpg") center center/cover no-repeat;
+    background: url("main-image.png") center center/cover no-repeat;
 
     display: flex;
     align-items: center;
@@ -1401,27 +1397,38 @@ body{
     }
 }
 
+
+
+
+
+
+
+
 /* LEARN SECTION */
 .learn-detecting-section{
     padding: 70px 0;
+    text-align: center;
     position: relative;
-	text-align: center;
 }
 
 .learn-detecting-section h2{
-    text-align: center;
     font-size: 42px;
     font-weight: 800;
     color: #0054A6;
-    margin-bottom: 32px;
+    margin-bottom: 35px;
+}
+
+/* WRAPPER */
+.learn-slider-wrapper{
+    position: relative;
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 70px;
 }
 
 /* SWIPER */
 .learnSwiper{
-    position: relative;
-    max-width: 950px;
-    margin: 0 auto;
-    padding: 0 70px;
+    overflow: hidden;
 }
 
 /* CARD */
@@ -1429,19 +1436,12 @@ body{
     background: #fff;
     border-radius: 22px;
     overflow: hidden;
-
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    transition: 0.3s;
-}
-
-.learn-card:hover{
-    transform: translateY(-4px);
 }
 
 /* IMAGE */
 .learn-image{
     height: 210px;
-    overflow: hidden;
 }
 
 .learn-image img{
@@ -1453,22 +1453,20 @@ body{
 
 /* CONTENT */
 .learn-content{
-    padding: 18px 20px 22px;
-	text-align: left;
+    padding: 20px;
+    text-align: center;
 }
 
 .learn-content h3{
     font-size: 20px;
-    line-height: 1.1;
     font-weight: 800;
     color: #0054A6;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .learn-content p{
     font-size: 15px;
-    line-height: 1.45;
-    color: #222;
+    line-height: 1.4;
     margin-bottom: 16px;
 }
 
@@ -1477,22 +1475,18 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    height: 28px;
-    padding: 0 14px;
-
     background: #0054A6;
     color: #fff;
+    height: 32px;
+    padding: 0 16px;
     border-radius: 6px;
-
     text-decoration: none;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
 }
 
 /* BOTTOM BUTTON */
 .learn-bottom-btn{
-    text-align: center;
     margin-top: 35px;
 }
 
@@ -1500,96 +1494,54 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    height: 42px;
-    padding: 0 22px;
-
+    height: 46px;
+    padding: 0 26px;
     background: #0054A6;
     color: #fff;
-
     border-radius: 10px;
     text-decoration: none;
-
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
 }
 
-/* ARROWS */
-.learn-next,
-.learn-prev{
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-	
-}
-
-.learn-next::after,
-.learn-prev::after{
-    font-size: 16px !important;
-    color: #666;
-    font-weight: 700;
-}
-
-/* OUTSIDE POSITION */
-.learn-prev{
-    left: 0 !important;
-	background-image: url('left-arrow.png');
-	
-	background-size: 30px;
-}
-
+/* NAVIGATION */
+.learn-prev,
 .learn-next{
-    right: 0 !important;
-	background-image: url('right-arrow.png');
-	background-size: 30px;
-}
+    width: 52px !important;
+    height: 52px !important;
 
-/* RESPONSIVE */
-@media(max-width:768px){
-
-    .learn-detecting-section h2{
-        font-size: 38px;
-    }
-
-    .learnSwiper{
-        padding: 0 20px;
-    }
-
-    .learn-image{
-        height: 180px;
-    }
-
-}
-.learn-prev{
-    left: -52px !important;
-}
-
-.learn-next{
-    right: -55px !important;
-}
-.learnSwiper{
-    overflow: visible !important;
-}
-.learnSwiper{
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-	overflow: visible;
-}
-.learnSwiper .learn-prev{
-    left: -52px !important;
-}
-
-.learnSwiper .learn-next{
-    right: -83px !important;
-}
-
-.learnSwiper .swiper-button-prev,
-.learnSwiper .swiper-button-next{
-    top: 52%;
+    position: absolute;
+    top: 50%;
     transform: translateY(-50%);
+    z-index: 10;
+
+    background-color: #fff;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    cursor: pointer;
 }
+
+.learn-prev{
+    left: 0;
+    background-image: url('left-arrow.png');
+}
+
+.learn-next{
+    right: 0;
+    background-image: url('right-arrow.png');
+}
+
+/* REMOVE DEFAULT SWIPER ICONS */
+.learn-prev::after,
+.learn-next::after{
+    display: none;
+}
+
 </style>
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -1975,7 +1927,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- CARD 1 -->
         <div class="offer-card image-card">
 
-            <img src="offers-month.jpg" alt="Offers">
+            <img src="e1.png" alt="Offers">
 
             <div class="offer-overlay">
 
@@ -1996,7 +1948,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- CARD 2 -->
         <div class="offer-card image-card">
 
-            <img src="books.jpg" alt="Books">
+            <img src="e2.png" alt="Books">
 
             <div class="offer-overlay light">
 
@@ -2013,25 +1965,22 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
             </div>
 
         </div>
-
-        <!-- CARD 3 -->
-        <div class="offer-card gift-card">
-
-            <h3>GIFT CARDS AVAILABLE</h3>
-
-            <span>
-                The perfect gift for every detectorist —
-                flexible and easy to use.
-            </span>
-
-            <img src="gift-cards.png" alt="Gift Cards">
-
-            <button class="offer-btn">
-                BUY GIFT CARDS
-            </button>
-
+		
+		
+		<!-- CARD 2 -->
+        <div class="offer-card image-card">
+            <img src="e3.png" alt="Books">
+            <div class="offer-overlay light">
+                <h3>GIFT CARDS AVAILABLE</h3>
+                <span>
+                    The perfect gift for every detectorist —
+                    flexible and easy to use.
+                </span>
+                <button class="offer-btn">
+                    BUY GIFT CARDS
+                </button>
+            </div>
         </div>
-
     </div>
 
 </section>
@@ -2063,81 +2012,125 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <h2>Learn Metal Detecting</h2>
 
-    <div class="swiper learnSwiper">
+    <div class="learn-slider-wrapper">
 
-        <div class="swiper-wrapper">
+        <div class="swiper learnSwiper">
 
-            <!-- CARD 1 -->
-            <div class="swiper-slide">
-                <div class="learn-card">
+            <div class="swiper-wrapper">
 
-                    <div class="learn-image">
-                        <img src="p1.png" alt="">
+                <!-- CARD 1 -->
+                <div class="swiper-slide">
+                    <div class="learn-card">
+
+                        <div class="learn-image">
+                            <img src="p1.png" alt="">
+                        </div>
+
+                        <div class="learn-content">
+                            <h3>The Beginner Hub</h3>
+
+                            <p>
+                                Start Here: The Absolute Beginner’s Guide
+                            </p>
+
+                            <a href="#" class="learn-btn">Read More</a>
+                        </div>
+
                     </div>
-
-                    <div class="learn-content">
-                        <h3>The Beginner Hub</h3>
-
-                        <p>
-                            Start Here: The Absolute Beginner’s Guide
-                        </p>
-
-                        <a href="#" class="learn-btn">Read More</a>
-                    </div>
-
                 </div>
+
+                <!-- CARD 2 -->
+                <div class="swiper-slide">
+                    <div class="learn-card">
+
+                        <div class="learn-image">
+                            <img src="p2.png" alt="">
+                        </div>
+
+                        <div class="learn-content">
+                            <h3>Training & Pro Tips</h3>
+
+                            <p>
+                                Advanced Recovery & Target ID Techniques
+                            </p>
+
+                            <a href="#" class="learn-btn">Read More</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="swiper-slide">
+                    <div class="learn-card">
+
+                        <div class="learn-image">
+                            <img src="p3.png" alt="">
+                        </div>
+
+                        <div class="learn-content">
+                            <h3>Legal & Heritage</h3>
+
+                            <p>
+                                Ethics, Permissions & The Treasure Act
+                            </p>
+
+                            <a href="#" class="learn-btn">Read More</a>
+                        </div>
+
+                    </div>
+                </div>
+				
+				<!-- CARD 4 -->
+                <div class="swiper-slide">
+                    <div class="learn-card">
+
+                        <div class="learn-image">
+                            <img src="p3.png" alt="">
+                        </div>
+
+                        <div class="learn-content">
+                            <h3>Legal & Heritage</h3>
+
+                            <p>
+                                Ethics, Permissions & The Treasure Act
+                            </p>
+
+                            <a href="#" class="learn-btn">Read More</a>
+                        </div>
+
+                    </div>
+                </div>
+				
+				<!-- CARD 5 -->
+                <div class="swiper-slide">
+                    <div class="learn-card">
+
+                        <div class="learn-image">
+                            <img src="p3.png" alt="">
+                        </div>
+
+                        <div class="learn-content">
+                            <h3>Legal & Heritage</h3>
+
+                            <p>
+                                Ethics, Permissions & The Treasure Act
+                            </p>
+
+                            <a href="#" class="learn-btn">Read More</a>
+                        </div>
+
+                    </div>
+                </div>
+				
+				
+
             </div>
 
-            <!-- CARD 2 -->
-            <div class="swiper-slide">
-                <div class="learn-card">
-
-                    <div class="learn-image">
-                        <img src="p2.png" alt="">
-                    </div>
-
-                    <div class="learn-content">
-                        <h3>Training & Pro Tips</h3>
-
-                        <p>
-                            Advanced Recovery & Target ID Techniques
-                        </p>
-
-                        <a href="#" class="learn-btn">Read More</a>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="swiper-slide">
-                <div class="learn-card">
-
-                    <div class="learn-image">
-                        <img src="p3.png" alt="">
-                    </div>
-
-                    <div class="learn-content">
-                        <h3>Legal & Heritage</h3>
-
-                        <p>
-                            Ethics, Permissions & The Treasure Act
-                        </p>
-
-                        <a href="#" class="learn-btn">Read More</a>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- DUPLICATE IF NEEDED -->
-
-        </div>
-
-        <!-- ARROWS -->
-        <div class="swiper-button-next learn-next"></div>
-        <div class="swiper-button-prev learn-prev"></div>
-
+		</div>
+		<!-- ARROWS OUTSIDE SWIPER -->
+			<div class="swiper-button-prev learn-prev"></div>
+			<div class="swiper-button-next learn-next"></div>
     </div>
 
     <!-- BOTTOM BUTTON -->
@@ -2182,6 +2175,7 @@ const learnSwiper = new Swiper(".learnSwiper", {
     navigation: {
         nextEl: ".learn-next",
         prevEl: ".learn-prev",
+		disabledClass: "swiper-button-disabled",
     },
 
     breakpoints: {
