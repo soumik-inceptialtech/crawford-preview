@@ -1563,6 +1563,133 @@ body{
     margin-top: 33px;
 }
 
+
+
+
+/* WHY CHOOSE SECTION */
+.why-heading{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.why-heading h2{
+    font-size: 58px;
+    font-weight: 800;
+    color: #0054A6;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+/* TRUSTPILOT */
+.trustpilot-rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.trustpilot-rating img{
+    height: 38px;
+    width: auto;
+}
+
+.trustpilot-rating span{
+    background: #00B67A;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    line-height: 1;
+}
+
+/* GRID */
+.why-grid{
+    max-width: 1180px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+/* CARD */
+.why-card{
+    background: #fff;
+    border: 1.5px solid #0054A6;
+    border-radius: 22px;
+
+    padding: 28px 24px;
+
+    min-height: 220px;
+
+    transition: 0.3s ease;
+}
+
+.why-card.active{
+    border: 3px solid #0054A6;
+}
+
+.why-icon{
+    margin-bottom: 22px;
+}
+
+.why-icon img{
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+/* TITLE */
+.why-card h3{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0054A6;
+
+    margin-bottom: 12px;
+}
+
+/* TEXT */
+.why-card p{
+    font-size: 15px;
+    line-height: 1.45;
+    color: #234;
+}
+
+/* HOVER */
+.why-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* RESPONSIVE */
+@media(max-width: 991px){
+
+    .why-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-heading h2{
+        font-size: 42px;
+    }
+}
+
+@media(max-width: 600px){
+
+    .why-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .why-heading h2{
+        font-size: 34px;
+    }
+
+    .why-card{
+        min-height: auto;
+    }
+}
+
 </style>
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -2158,7 +2285,74 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <div class="learn-bottom-btn">
         <a href="#">Explore All Guides →</a>
     </div>
+</section>
+<!-- WHY CHOOSE CRAWFORDS -->
+<section class="why-crawfords-section">
 
+    <div class="why-heading">
+        <h2>Why Choose Crawfords?</h2>
+
+        <div class="trustpilot-rating">
+            <img src="trustpilot.png" alt="Trustpilot">
+            <span>4.9</span>
+        </div>
+    </div>
+
+    <div class="why-grid">
+
+        <!-- CARD 1 -->
+        <div class="why-card">
+            <div class="why-icon">
+                <img src="icon1.png" alt="">
+            </div>
+
+            <h3>Official UK Dealer</h3>
+
+            <p>
+                Authorised retailer for leading brands.
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="why-card active">
+            <div class="why-icon">
+                <img src="icon2.png" alt="">
+            </div>
+
+            <h3>Expert Advice</h3>
+
+            <p>
+                Get guidance from seasoned detectorists to help you choose the right kit.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="why-card">
+            <div class="why-icon">
+                <img src="icon3.png" alt="">
+            </div>
+
+            <h3>Community Focus</h3>
+
+            <p>
+                Join our thriving metal detecting community for rallies, group digs, and expert support.
+            </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="why-card">
+            <div class="why-icon">
+                <img src="icon4.png" alt="">
+            </div>
+
+            <h3>Fast UK Delivery</h3>
+
+            <p>
+                Quick, reliable and trackable shipping.
+            </p>
+        </div>
+
+    </div>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
