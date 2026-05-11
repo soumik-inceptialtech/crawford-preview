@@ -941,7 +941,7 @@ body{
 /* EXPLORE OFFERS */
 
 .explore-offers{
-    padding: 40px 0px;
+    padding: 40px;
     background: #ffff;
     text-align: center;
 }
@@ -962,13 +962,7 @@ body{
 
 /* GRID */
 
-.offers-grid{
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0px;
-}
+
 
 /* CARD */
 
@@ -1136,7 +1130,7 @@ body{
 /* EXPLORE OFFERS */
 
 .explore-offers{
-    padding: 40px 0px;
+    padding: 40px;
     background: #ffff;
     text-align: center;
 }
@@ -1158,11 +1152,16 @@ body{
 /* GRID */
 
 .offers-grid{
-    max-width: 1200px;
+    max-width: 1280px;
     margin: auto;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0px;
+
+    grid-template-columns: repeat(3, 360px);
+
+    justify-content: center;
+
+    gap: 10px;
 }
 
 /* CARD */
@@ -1209,9 +1208,10 @@ body{
 
 .offer-overlay span,
 .gift-card span{
-    font-size: 13px;
+    font-size: 11px;
     line-height: 1.5;
     max-width: 240px;
+	margin-bottom: 298px;
 }
 
 /* GIFT CARD */
@@ -1538,6 +1538,28 @@ body{
 .learn-prev::after,
 .learn-next::after{
     display: none;
+}
+
+.offer-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.offer-card{
+    height: 520px;
+}
+.offer-overlay{
+    position: absolute;
+    inset: 0;
+}
+.offer-overlay h3,
+.gift-card h3{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-top: 33px;
 }
 
 </style>
