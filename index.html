@@ -1405,7 +1405,7 @@ body{
 
 /* LEARN SECTION */
 .learn-detecting-section{
-    padding: 70px 0;
+    padding: 60px 0;
     text-align: center;
     position: relative;
 }
@@ -1493,8 +1493,8 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 46px;
-    padding: 0 26px;
+    height: 38px;
+    padding: 0 20px;
     background: #0054A6;
     color: #fff;
     border-radius: 10px;
@@ -1569,11 +1569,11 @@ body{
 /* WHY CHOOSE SECTION */
 .why-heading{
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 23px;
 }
 
 .why-heading h2{
-    font-size: 58px;
+    font-size: 42px;
     font-weight: 800;
     color: #0054A6;
     line-height: 1.1;
@@ -1585,31 +1585,26 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    margin-top: 12px;
 }
 
 .trustpilot-rating img{
-    height: 38px;
+    height: 44px;
     width: auto;
 }
 
-.trustpilot-rating span{
-    background: #00B67A;
-    color: #fff;
-    font-size: 26px;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 4px;
-    line-height: 1;
-}
+
 
 /* GRID */
 .why-grid{
     max-width: 1180px;
-    margin: auto;
+    margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 260px);
+    justify-content: center;
+
     gap: 18px;
 }
 
@@ -1631,7 +1626,7 @@ body{
 }
 
 .why-icon{
-    margin-bottom: 22px;
+    margin-bottom: 8px;
 }
 
 .why-icon img{
@@ -1642,7 +1637,7 @@ body{
 
 /* TITLE */
 .why-card h3{
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 800;
     line-height: 1.1;
     color: #0054A6;
@@ -1688,6 +1683,73 @@ body{
     .why-card{
         min-height: auto;
     }
+}
+.tp-text{
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+.trustpilot-rating{
+    background: #00B67A;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    line-height: 1;
+	 all: unset;
+}
+
+.tp-score{
+    background: #00B67A;
+    color: #fff;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    padding: 4px 10px;
+    border-radius: 4px;
+
+    line-height: 1;
+}
+.trustpilot-rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.tp-star{
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.tp-text{
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1;
+}
+
+.tp-score{
+    background: #00B67A;
+    color: #fff;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    padding: 4px 10px;
+    border-radius: 4px;
+
+    line-height: 1;
 }
 
 </style>
@@ -2293,8 +2355,9 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <h2>Why Choose Crawfords?</h2>
 
         <div class="trustpilot-rating">
-            <img src="trustpilot.png" alt="Trustpilot">
-            <span>4.9</span>
+            <img src="starGreen.png" alt="Trustpilot">
+			<span class="tp-text">Trustpilot</span>
+            <span class="tp-score">4.9</span>
         </div>
     </div>
 
@@ -2303,7 +2366,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- CARD 1 -->
         <div class="why-card">
             <div class="why-icon">
-                <img src="icon1.png" alt="">
+                <img src="n1.png" alt="">
             </div>
 
             <h3>Official UK Dealer</h3>
@@ -2316,7 +2379,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- CARD 2 -->
         <div class="why-card active">
             <div class="why-icon">
-                <img src="icon2.png" alt="">
+                <img src="n2.png" alt="">
             </div>
 
             <h3>Expert Advice</h3>
@@ -2329,7 +2392,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- CARD 3 -->
         <div class="why-card">
             <div class="why-icon">
-                <img src="icon3.png" alt="">
+                <img src="n3.png" alt="">
             </div>
 
             <h3>Community Focus</h3>
@@ -2342,7 +2405,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- CARD 4 -->
         <div class="why-card">
             <div class="why-icon">
-                <img src="icon4.png" alt="">
+                <img src="n4.png" alt="">
             </div>
 
             <h3>Fast UK Delivery</h3>
