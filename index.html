@@ -1405,7 +1405,7 @@ body{
 
 /* LEARN SECTION */
 .learn-detecting-section{
-    padding: 60px 0;
+    padding: 50px 0;
     text-align: center;
     position: relative;
 }
@@ -1900,6 +1900,216 @@ body{
         width: 100%;
         max-width: 260px;
     }
+}
+
+
+
+
+
+/* SHOWROOMS SECTION */
+
+.showrooms-section{
+    background: linear-gradient(to bottom, #f5fbff 0%, #dfeffc 100%);
+    padding: 0px 20px 80px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.showrooms-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.showrooms-title{
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    color: #0054A6;
+    margin-bottom: 50px;
+    line-height: 1;
+}
+
+.showrooms-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+}
+
+.showroom-card{
+    background: #fff;
+    border-radius: 22px;
+    padding: 34px 38px 26px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.showroom-heading{
+    font-size: 32px;
+    line-height: 1.05;
+    color: #0054A6;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.showroom-heading span{
+    display: inline-block;
+}
+
+.showroom-info{
+    margin-bottom: 24px;
+}
+
+.info-row{
+    color: #1a4f9b;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.phone{
+    font-size: 18px;
+    font-weight: 800;
+    color: #0054A6;
+}
+
+.icon{
+    min-width: 18px;
+}
+
+.timing-grid{
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.three-col{
+    flex-wrap: nowrap;
+}
+
+.bottom-row{
+    margin-top: -4px;
+}
+
+.timing-block h4,
+.timing-single h4{
+    color: #0054A6;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.timing-block p,
+.timing-single p{
+    color: #1a4f9b;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.divider{
+    width: 1px;
+    height: 48px;
+    background: #8aa8d8;
+}
+
+.timing-single{
+    margin-bottom: 22px;
+}
+
+.what3words{
+    display: inline-block;
+    background: #e6251f;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+.direction-btn{
+    position: absolute;
+    bottom: -18px;
+    left: 38px;
+
+    background: #0054A6;
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    padding: 16px 32px;
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+.direction-btn:hover{
+    background: #003f7d;
+}
+
+@media(max-width: 992px){
+
+    .showrooms-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .showrooms-title{
+        font-size: 42px;
+    }
+
+    .showroom-heading{
+        font-size: 28px;
+    }
+
+    .three-col{
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 600px){
+
+    .showrooms-section{
+        padding: 60px 16px 80px;
+    }
+
+    .showrooms-title{
+        font-size: 36px;
+    }
+
+    .showroom-card{
+        padding: 28px 24px 80px;
+    }
+
+    .direction-btn{
+        left: 24px;
+    }
+
+    .timing-grid{
+        flex-direction: column;
+    }
+
+    .divider{
+        width: 100%;
+        height: 1px;
+    }
+}
+.fa-clock {
+    color: #0a4ea3;
+}
+.bottom-row {
+    margin-top: -4px;
+    padding-left: 38px;
+}
+.timing-grid {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
 }
 
 </style>
@@ -2594,6 +2804,138 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     </div>
 
+</section>
+
+<!-- SHOWROOMS SECTION -->
+<section class="showrooms-section">
+  <div class="showrooms-container">
+
+    <h2 class="showrooms-title">Our Showrooms</h2>
+
+    <div class="showrooms-grid">
+
+      <!-- CARD 1 -->
+      <div class="showroom-card">
+
+        <h3 class="showroom-heading">
+          Northern Showroom<br>
+          <span>(Scunthorpe)</span>
+        </h3>
+
+        <div class="showroom-info">
+          <p class="info-row">
+            <span class="icon">📍</span>
+            11 Weaver Court, Sawcliffe Industrial Estate,<br>
+            Scunthorpe, Lincolnshire, DN15 8RN
+          </p>
+
+          <p class="info-row phone">
+            <span class="icon">📞</span>
+            01724 845608
+          </p>
+        </div>
+
+        <div class="timing-grid">
+
+          <div class="timing-block">
+            <h4>Mon–Fri:</h4>
+            <p>9:00am – 5:00pm</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="timing-block">
+            <h4>Saturday:</h4>
+            <p>10:00am – 12:00pm</p>
+          </div>
+
+        </div>
+
+        <div class="timing-single">
+          <h4>Sunday:</h4>
+          <p>Closed</p>
+        </div>
+
+        <a href="#" class="direction-btn">
+          GET DIRECTIONS ↗
+        </a>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="showroom-card">
+
+        <h3 class="showroom-heading">
+          Southern Showroom<br>
+          <span>(Ferndown)</span>
+        </h3>
+
+        <div class="showroom-info">
+          <p class="info-row">
+            <i class="fa-solid fa-location-dot"></i>
+            Unit 12, Cobham Business Centre, Wimborne,<br>
+            Dorset, BH21 7BX
+          </p>
+
+          <p class="info-row phone">
+            <i class="fa-solid fa-phone"></i>
+            01202 091648
+          </p>
+        </div>
+
+        <div class="timing-grid three-col">
+			<span class="icon">
+				<i class="fa-solid fa-clock"></i>
+			</span>
+          <div class="timing-block">
+            <h4>Mon–Tue:</h4>
+            <p>9:00am – 5:00pm</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="timing-block">
+            <h4>Wed:</h4>
+            <p>Closed</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="timing-block">
+            <h4>Thu–Fri:</h4>
+            <p>9:00am – 5:00pm</p>
+          </div>
+
+        </div>
+
+        <div class="timing-grid bottom-row">
+
+          <div class="timing-block">
+            <h4>Saturday:</h4>
+            <p>10:00am – 12:00pm</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="timing-block">
+            <h4>Sunday:</h4>
+            <p>Closed</p>
+          </div>
+
+        </div>
+
+        <div class="what3words">
+          /// musical.laying.shortland
+        </div>
+
+        <a href="#" class="direction-btn">
+          GET DIRECTIONS ↗
+        </a>
+
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
