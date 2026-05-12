@@ -2113,7 +2113,240 @@ body{
     align-items: stretch;
     gap: 18px;
 }
+/* FOOTER */
+.footer-section{
+    background: #143a86;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
 
+.footer-container{
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 70px 40px 50px;
+}
+
+/* TOP */
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.footer-about{
+    max-width: 320px;
+}
+
+.footer-about p{
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 30px;
+}
+
+.footer-about h4{
+    font-size: 21px;
+    margin-bottom: 22px;
+    font-weight: 700;
+}
+
+.social-icons{
+    display: flex;
+    gap: 35px;
+}
+
+.social-icons a{
+    color: #fff;
+    font-size: 32px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover{
+    transform: translateY(-4px);
+}
+
+/* LINKS */
+.footer-links{
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.footer-column h3{
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.footer-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column a{
+    color: rgba(255,255,255,0.95);
+    text-decoration: none;
+    margin-bottom: 18px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.footer-column a:hover{
+    opacity: 0.8;
+}
+
+/* DIVIDER */
+.footer-divider{
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin: 55px 0;
+}
+
+/* MIDDLE */
+.footer-middle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.finance-info{
+    max-width: 600px;
+    padding-right: 60px;
+    border-right: 1px solid rgba(255,255,255,0.35);
+}
+
+.finance-info h4{
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.finance-info p{
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    color: rgba(255,255,255,0.92);
+}
+
+.footer-logo-area{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-logo-area img{
+    width: 360px;
+    max-width: 100%;
+}
+
+/* BOTTOM */
+.footer-bottom{
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding: 22px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    background: rgba(0,0,0,0.08);
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.footer-bottom span{
+    font-weight: 700;
+}
+
+/* WHATSAPP */
+.whatsapp-btn{
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 74px;
+    height: 74px;
+    background: #4dc247;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 42px;
+    text-decoration: none;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 999;
+}
+
+/* RESPONSIVE */
+@media(max-width: 991px){
+
+    .footer-top{
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .footer-links{
+        gap: 60px;
+    }
+
+    .footer-middle{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .finance-info{
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .footer-logo-area{
+        justify-content: flex-start;
+    }
+}
+
+@media(max-width: 768px){
+
+    .footer-container{
+        padding: 60px 24px 40px;
+    }
+
+    .footer-column h3{
+        font-size: 28px;
+    }
+
+    .footer-column a{
+        font-size: 18px;
+    }
+
+    .footer-about p{
+        font-size: 18px;
+    }
+
+    .footer-bottom{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.whatsapp-btn{
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 74px;
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.whatsapp-btn img{
+   
+    height: 126px;
+    object-fit: contain;
+}
 </style>
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -2939,6 +3172,132 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     </div>
   </div>
 </section>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- FOOTER SECTION -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- TOP FOOTER -->
+        <div class="footer-top">
+
+            <!-- LEFT INFO -->
+            <div class="footer-about">
+                <p>
+                    The UK’s home of metal detecting.<br>
+                    Community-first, education-led, passionate<br>
+                    about the world’s greatest hobby since 1994.
+                </p>
+
+                <h4>Follow Crawfords</h4>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <!-- FOOTER LINKS -->
+            <div class="footer-links">
+
+                <div class="footer-column">
+                    <h3>SHOP</h3>
+
+                    <a href="#">All Detectors</a>
+                    <a href="#">Minelab Range</a>
+                    <a href="#">Beginner Detectors</a>
+                    <a href="#">Accessories</a>
+                    <a href="#">Clothing & Gear</a>
+                    <a href="#">Sale Items</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>LEARN</h3>
+
+                    <a href="#">Beginner’s Guide</a>
+                    <a href="#">Detector Reviews</a>
+                    <a href="#">Finds Identification</a>
+                    <a href="#">Land Permissions</a>
+                    <a href="#">Video Tutorials</a>
+                    <a href="#">Blog & News</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>INFO</h3>
+
+                    <a href="#">Complaints</a>
+                    <a href="#">Finance (Snap Finance)</a>
+                    <a href="#">Vulnerable Customer</a>
+                    <a href="#">Policies</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="footer-divider"></div>
+
+        <!-- MIDDLE FOOTER -->
+        <div class="footer-middle">
+
+            <!-- FINANCE -->
+            <div class="finance-info">
+
+                <h4>Finance Information</h4>
+
+                <p>
+                    Crawfords Electronics Limited (Company Number: 04361857, FRN: 955130),
+                    trading as Crawfords Metal Detectors, are authorised and regulated by
+                    the Financial Conduct Authority.
+                </p>
+
+                <p>
+                    We are a credit broker, not a lender. Credit is subject to status and affordability.
+                </p>
+
+                <p>
+                    Credit is provided by Novuna Personal Finance (register no. 704348),
+                    a trading style of Mitsubishi HC Capital UK PLC, and Snap Finance Ltd
+                    (register no. 741813).
+                </p>
+
+                <p><strong>Terms & Conditions apply.</strong></p>
+
+            </div>
+
+            <!-- LOGO -->
+            <div class="footer-logo-area">
+                <img src="Logo_white.png" alt="Crawfords Logo">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="footer-bottom">
+
+        <p>© 2026 Crawfords Metal Detectors UK</p>
+
+        <p>
+            Ecommerce website built by
+            <span>Inceptial Technologies</span>
+        </p>
+
+    </div>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="#" class="whatsapp-btn">
+		<img src="whatsapp.png" alt="WhatsApp">
+    </a>
+
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
