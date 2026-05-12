@@ -1752,6 +1752,156 @@ body{
     line-height: 1;
 }
 
+
+
+
+
+
+
+/* MINELAB HERO SECTION */
+
+.minelab-hero{
+    position: relative;
+    height: 468px;
+
+    margin: 60px auto;
+
+    border-radius: 0px;
+    overflow: hidden;
+
+    background-image: url("minelabbg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+	margin-left: calc(50% - 56vw);
+    margin-right: calc(50% - 56vw);
+}
+
+/* DARK LEFT OVERLAY */
+.minelab-overlay{
+    position: absolute;
+    inset: 0;
+
+    /* background: linear-gradient(
+        90deg,
+        rgba(6, 11, 45, 0.88) 0%,
+        rgba(6, 11, 45, 0.82) 35%,
+        rgba(6, 11, 45, 0.35) 60%,
+        rgba(6, 11, 45, 0) 100%
+    ); */
+}
+
+/* CONTENT */
+.minelab-content{
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 78px;
+}
+
+/* HEADING */
+.minelab-content h2{
+    margin-top: 78px;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 0.95;
+    margin-bottom: 26px;
+    max-width: 447px;
+	padding-left: 60px;
+}
+
+/* BUTTON WRAPPER */
+.minelab-buttons{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+	padding-left: 60px;
+}
+
+/* COMMON BUTTON */
+.minelab-btn{
+    height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 22px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+/* ORANGE BUTTON */
+.primary-btn{
+    background: linear-gradient(
+        180deg,
+        #FFB400 0%,
+        #FF8F00 100%
+    );
+
+    color: #fff;
+}
+
+/* OUTLINE BUTTON */
+.outline-btn{
+    border: 2px solid rgba(255,255,255,0.7);
+    color: #fff;
+
+    background: transparent;
+}
+
+/* HOVER */
+.primary-btn:hover{
+    transform: translateY(-2px);
+}
+
+.outline-btn:hover{
+    background: rgba(255,255,255,0.08);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+
+    .minelab-hero{
+        height: auto;
+        min-height: 520px;
+
+        background-position: 70% center;
+    }
+
+    .minelab-content{
+        padding: 60px 30px;
+    }
+
+    .minelab-content h2{
+        font-size: 42px;
+    }
+
+    .minelab-buttons{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .minelab-btn{
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
 </style>
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -2416,6 +2566,34 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         </div>
 
     </div>
+</section>
+
+<!-- MINELAB HERO SECTION -->
+<section class="minelab-hero">
+
+    <div class="minelab-overlay"></div>
+
+    <div class="minelab-content">
+
+        <h2>
+            Built for <br>
+            Detectorists. <br>
+            Engineered by <br>
+            Minelab.
+        </h2>
+
+        <div class="minelab-buttons">
+            <a href="#" class="minelab-btn primary-btn">
+                Shop Minelab Range
+            </a>
+
+            <a href="#" class="minelab-btn outline-btn">
+                Book In-Store Demo
+            </a>
+        </div>
+
+    </div>
+
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
