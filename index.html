@@ -1743,7 +1743,7 @@ body{
 }
 
 .tp-text{
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
     color: #111;
     line-height: 1;
@@ -2373,6 +2373,154 @@ body{
     overflow: hidden;
 }
 
+
+
+.testimonial-section{
+    
+    padding:80px 0;
+    overflow:hidden;
+	padding-top: 1px;
+}
+
+.testimonial-container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+.testimonial-title{
+    text-align:center;
+    font-size:42px;
+    font-weight:800;
+    color:#0054A6;
+    margin-bottom:12px;
+    line-height:1.1;
+}
+
+.trustpilot-box{
+	display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:40px;
+}
+
+.trustpilot-box img{
+    width:42px;
+    max-width:100%;
+}
+
+.trustpilot-stars{
+    display:flex;
+    justify-content:center;
+    gap:4px;
+}
+.tp-star-box{
+    width:34px;
+    height:34px;
+    background:#00B67A;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.tp-star-box i{
+    color:#fff;
+    font-size:18px;
+}
+.testimonialSwiper{
+    padding:0 60px;
+}
+
+.testimonial-card{
+    background:#fff;
+    border-radius:22px;
+    padding:30px 22px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    min-height:295px;
+}
+
+.user-img{
+    width:74px;
+    height:74px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:18px;
+}
+
+.testimonial-card h3{
+    font-size:16px;
+    font-weight:800;
+    margin-bottom:10px;
+    color:#111;
+}
+
+.review-text{
+    font-size:15px;
+    line-height:1.5;
+    color:#222;
+    margin-bottom:18px;
+}
+
+.rating{
+    color:#B4D334;
+    font-size:28px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+}
+
+.testimonial-card h4{
+    font-size:18px;
+    font-weight:800;
+    color:#111;
+    margin-bottom:6px;
+}
+
+.verified{
+    font-size:15px;
+    color:#111;
+}
+
+.verified i{
+    color:#00A651;
+    margin-right:6px;
+}
+
+.testimonial-next,
+.testimonial-prev{
+    color:#0054A6 !important;
+    font-weight:900;
+}
+
+.testimonial-next::after,
+.testimonial-prev::after{
+    font-size:36px !important;
+    font-weight:900;
+}
+
+@media(max-width:1024px){
+
+    .testimonial-title{
+        font-size:48px;
+    }
+}
+
+@media(max-width:768px){
+
+    .testimonial-title{
+        font-size:36px;
+    }
+
+    .testimonialSwiper{
+        padding:0 20px;
+    }
+}
+.tp-top img{
+    width:42px;
+    position:relative;
+    top:7px;
+}
 </style>
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -3066,7 +3214,177 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     </div>
 
 </section>
+<section class="testimonial-section">
 
+    <div class="testimonial-container">
+
+        <!-- HEADING -->
+        <h2 class="testimonial-title">
+            What Fellow Detectorists Say
+        </h2>
+
+        <!-- TRUSTPILOT -->
+        <div class="trustpilot-box">
+
+    <div class="tp-top">
+        <img src="starGreen.png" alt="Trustpilot">
+        <span class="tp-text">Trustpilot</span>
+    </div>
+
+    <div class="trustpilot-stars">
+
+        <div class="tp-star-box">
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+        <div class="tp-star-box">
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+        <div class="tp-star-box">
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+        <div class="tp-star-box">
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+        <div class="tp-star-box">
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+    </div>
+
+</div>
+
+        <!-- SLIDER -->
+        <div class="swiper testimonialSwiper">
+
+            <div class="swiper-wrapper">
+
+                <!-- CARD 1 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+
+                        <img src="t1.png" class="user-img" alt="User">
+
+                        <h3>UNBELIEVABLE FINDS!</h3>
+
+                        <p class="review-text">
+                            "Absolutely love my new Minelab! 
+                            The depth and clarity are amazing. 
+                            Highly recommend!"
+                        </p>
+
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+
+                        <h4>Sarah Jenkins, 35</h4>
+
+                        <div class="verified">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Verified Detectorist
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+
+                        <img src="t2.png" class="user-img" alt="User">
+
+                        <h3>BEST PURCHASE YET.</h3>
+
+                        <p class="review-text">
+                            "Super reliable machine. Changed 
+                            my detecting game forever. Couldn't 
+                            ask for better performance!"
+                        </p>
+
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+
+                        <h4>Mike Thompson, 46</h4>
+
+                        <div class="verified">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Verified Detectorist
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+
+                        <img src="t4.png" class="user-img" alt="User">
+
+                        <h3>EASY TO USE, POWERFUL!</h3>
+
+                        <p class="review-text">
+                            "The pinpointing is incredibly 
+                            accurate. Found a rare silver coin 
+                            on day one! Solid build."
+                        </p>
+
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+
+                        <h4>David Roberts, 55</h4>
+
+                        <div class="verified">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Verified Detectorist
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+
+                        <img src="t3.png" class="user-img" alt="User">
+
+                        <h3>THRILLED WITH RESULTS.</h3>
+
+                        <p class="review-text">
+                            "Excellent machine! 
+                            User-friendly and finds small 
+                            targets others miss."
+                        </p>
+
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+
+                        <h4>Chloe Smith, 29</h4>
+
+                        <div class="verified">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Verified Detectorist
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ARROWS -->
+            <div class="swiper-button-next testimonial-next"></div>
+            <div class="swiper-button-prev testimonial-prev"></div>
+
+        </div>
+
+    </div>
+
+</section>
 <!-- SHOWROOMS SECTION -->
 <section class="showrooms-section">
   <div class="showrooms-container">
@@ -3379,6 +3697,33 @@ const learnSwiper = new Swiper(".learnSwiper", {
 
     }
 
+});
+
+const testimonialSwiper = new Swiper(".testimonialSwiper", {
+
+    slidesPerView: 4,
+    spaceBetween: 24,
+    loop: true,
+
+    navigation: {
+        nextEl: ".testimonial-next",
+        prevEl: ".testimonial-prev",
+    },
+
+    breakpoints: {
+
+        320: {
+            slidesPerView: 1,
+        },
+
+        768: {
+            slidesPerView: 2,
+        },
+
+        1024: {
+            slidesPerView: 4,
+        }
+    }
 });
 </script>
 </body>
