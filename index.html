@@ -526,6 +526,7 @@ body{
     width:1180px;
     margin:auto;
     padding-bottom:60px;
+	overflow: hidden;
 }
 
 .product-card img{
@@ -776,7 +777,9 @@ body{
 	margin-left: -57px;
 }
 .swiper{
-    overflow: visible !important;
+ overflow: visible !important;
+	
+	
 }
 .category-tabs button {
     font-size: 14px;
@@ -2346,6 +2349,21 @@ body{
     height: 126px;
     object-fit: contain;
 }
+.productSwiper {
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+    padding: 50px 0 70px;
+}
+
+.product-slider-section{
+    padding: 35px 0;
+    text-align: center;
+    background: #ffff;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
 </style>
 <link rel="stylesheet"
@@ -2818,7 +2836,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <h2>Learn Metal Detecting</h2>
 
     <div class="learn-slider-wrapper">
-
+	<div style="overflow: hidden;">
         <div class="swiper learnSwiper">
 
             <div class="swiper-wrapper">
@@ -2934,10 +2952,10 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 		</div>
 		<!-- ARROWS OUTSIDE SWIPER -->
-			<div class="swiper-button-prev learn-prev"></div>
-			<div class="swiper-button-next learn-next"></div>
+		</div>	
     </div>
-
+<div class="swiper-button-prev learn-prev"></div>
+			<div class="swiper-button-next learn-next"></div>
     <!-- BOTTOM BUTTON -->
     <div class="learn-bottom-btn">
         <a href="#">Explore All Guides →</a>
@@ -3304,8 +3322,8 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script>
 const swiper = new Swiper(".productSwiper", {
 
-    slidesPerView: 3.8,
-    spaceBetween: 8,
+    slidesPerView: 4,
+    spaceBetween: 20,
     loop: true,
 
     /*autoplay: {
