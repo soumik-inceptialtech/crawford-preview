@@ -80,6 +80,7 @@ body{
     width: 320px;
     height: auto;
     display: block;
+	margin-left: 100px;
 }
 
 .logo span{
@@ -501,6 +502,7 @@ body{
 }
 
 .product-slider-section h2{
+	margin-top: 37px;
     font-size:42px;
     font-weight:800;
     color:#0057a8;
@@ -826,7 +828,7 @@ body{
 .shop-way-section p{
     font-size: 15px;
     color: #222;
-    margin-bottom: 8px;
+    margin-bottom: 18px;
 }
 
 .shop-way-wrapper{
@@ -903,7 +905,7 @@ body{
     gap: 22px;
     max-width: 340px;
     margin: auto;
-	justify-content: center;
+	justify-content: left;
 }
 
 .brand-card{
@@ -1958,7 +1960,8 @@ body{
     padding: 34px 38px 26px;
     position: relative;
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-	width: 486px;
+    width: 100%;
+    max-width: 486px;
 }
 
 .showroom-heading{
@@ -1979,7 +1982,7 @@ body{
 
 .info-row{
     color: #1a4f9b;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.25;
     margin-bottom: 14px;
     display: flex;
@@ -2016,7 +2019,7 @@ body{
 .timing-block h4,
 .timing-single h4{
     color: #0054A6;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
     margin-bottom: 6px;
 }
@@ -2024,7 +2027,7 @@ body{
 .timing-block p,
 .timing-single p{
     color: #1a4f9b;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2;
 }
 
@@ -2033,7 +2036,7 @@ body{
     height: 50px;
     background: #8aa8d8;
     position: relative;
-    top: 39px;
+    top: 0px;
 }
 
 .timing-single{
@@ -2079,12 +2082,23 @@ body{
         grid-template-columns: 1fr;
     }
 
+    .showroom-card{
+        max-width: 100%;
+    }
+
     .showrooms-title{
         font-size: 42px;
     }
 
     .showroom-heading{
         font-size: 28px;
+    }
+
+    .direction-btn{
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 24px;
     }
 
     .three-col{
@@ -2124,7 +2138,7 @@ body{
 }
 .bottom-row {
     margin-top: -4px;
-    padding-left: 38px;
+    padding-left: 33px;
 }
 .timing-grid {
     display: flex;
@@ -2372,7 +2386,7 @@ body{
     overflow-x: hidden !important;
     overflow-y: visible;
     position: relative;
-    padding: 50px 0 10px !important;
+    padding: 15px 0 10px !important;
 }
 
 .productSwiper .swiper-pagination {
@@ -2420,12 +2434,13 @@ body{
 }
 
 .testimonial-title{
-    text-align:center;
-    font-size:42px;
-    font-weight:800;
-    color:#0054A6;
-    margin-bottom:12px;
-    line-height:1.1;
+    margin-top: 53px;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    color: #0054A6;
+    margin-bottom: 0px;
+    line-height: 1.1;
 }
 
 .trustpilot-box{
@@ -2599,6 +2614,12 @@ body{
     width:42px;
     position:relative;
     top:7px;
+}
+#shop-by-brand{
+	margin-right: 94px;
+}
+.timing-block-extend{
+	width: 122px;
 }
 </style>
 <link rel="stylesheet"
@@ -2941,7 +2962,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- RIGHT -->
         <div class="shop-column brand-column">
 
-            <button class="shop-title-btn">
+            <button class="shop-title-btn" id="shop-by-brand">
                 Shop by Brand
             </button>
 
@@ -3573,7 +3594,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 			<span class="icon">
 				<i class="fa-solid fa-clock"></i>
 			</span>
-          <div class="timing-block">
+          <div class="timing-block timing-block-extend">
             <h4>Mon–Tue:</h4>
             <p>9:00am – 5:00pm</p>
           </div>
@@ -3603,7 +3624,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
           <div class="divider"></div>
 
-          <div class="timing-block">
+          <div class="timing-block timing-block-extend">
             <h4>Sunday:</h4>
             <p>Closed</p>
           </div>
