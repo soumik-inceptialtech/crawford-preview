@@ -2419,7 +2419,7 @@ body{
     align-items:center;
     justify-content:center;
     gap:12px;
-    margin-bottom:40px;
+    margin-bottom:15px;
 }
 
 .trustpilot-box img{
@@ -2505,11 +2505,16 @@ body{
 .verified{
     font-size:15px;
     color:#111;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.verified i{
-    color:#00A651;
-    margin-right:6px;
+.verified img{
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 .testimonialSwiper{
@@ -2521,39 +2526,41 @@ body{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color:#0054A6 !important;
-    font-weight:900;
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.14);
     display: flex !important;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 20;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    cursor: pointer;
+    opacity: 1;
 }
 
 .testimonial-next{
-    right: 10px;
+    right: -14px;
+    background-image: url('right_arrow_testimonial.png');
 }
 
 .testimonial-prev{
-    left: 10px;
+    left: -14px;
+    background-image: url('left_arrow_testimonial.png');
+}
+
+.testimonial-next.swiper-button-lock,
+.testimonial-prev.swiper-button-lock {
+    pointer-events: auto !important;
+    opacity: 1 !important;
 }
 
 .testimonial-next::after,
 .testimonial-prev::after{
-    font-size:20px !important;
-    font-weight:900;
-}
-
-.testimonial-next::after{
-    content: '\203A';
-}
-
-.testimonial-prev::after{
-    content: '\2039';
+    content: none;
 }
 
 @media(max-width:1024px){
@@ -3340,7 +3347,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
                         <h4>Sarah Jenkins, 35</h4>
 
                         <div class="verified">
-                            <i class="fa-solid fa-circle-check"></i>
+                            <img src="greentick.png" alt="Verified" />
                             Verified Detectorist
                         </div>
 
@@ -3368,7 +3375,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
                         <h4>Mike Thompson, 46</h4>
 
                         <div class="verified">
-                            <i class="fa-solid fa-circle-check"></i>
+                            <img src="greentick.png" alt="Verified" />
                             Verified Detectorist
                         </div>
 
@@ -3396,7 +3403,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
                         <h4>David Roberts, 55</h4>
 
                         <div class="verified">
-                            <i class="fa-solid fa-circle-check"></i>
+                            <img src="greentick.png" alt="Verified" />
                             Verified Detectorist
                         </div>
 
@@ -3424,7 +3431,35 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
                         <h4>Chloe Smith, 29</h4>
 
                         <div class="verified">
-                            <i class="fa-solid fa-circle-check"></i>
+                            <img src="greentick.png" alt="Verified" />
+                            Verified Detectorist
+                        </div>
+
+                    </div>
+                </div>
+				
+				<!-- CARD 5 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+
+                        <img src="t4.png" class="user-img" alt="User">
+
+                        <h3>EASY TO USE, POWERFUL!</h3>
+
+                        <p class="review-text">
+                            "The pinpointing is incredibly 
+                            accurate. Found a rare silver coin 
+                            on day one! Solid build."
+                        </p>
+
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+
+                        <h4>David Roberts, 55</h4>
+
+                        <div class="verified">
+                            <img src="greentick.png" alt="Verified" />
                             Verified Detectorist
                         </div>
 
@@ -3761,10 +3796,12 @@ const testimonialSwiper = new Swiper(".testimonialSwiper", {
     slidesPerView: 4,
     spaceBetween: 24,
     loop: true,
+    
 
     navigation: {
         nextEl: ".testimonial-next",
         prevEl: ".testimonial-prev",
+        disabledClass: "swiper-button-disabled",
     },
 
     breakpoints: {
@@ -3781,6 +3818,20 @@ const testimonialSwiper = new Swiper(".testimonialSwiper", {
             slidesPerView: 4,
         }
     }
+});
+
+document.querySelectorAll('.testimonial-next, .testimonial-prev').forEach(button => {
+    button.style.pointerEvents = 'auto';
+});
+
+document.querySelector('.testimonial-next')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    testimonialSwiper.slideNext();
+});
+
+document.querySelector('.testimonial-prev')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    testimonialSwiper.slidePrev();
 });
 </script>
 </body>
