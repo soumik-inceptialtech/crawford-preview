@@ -483,7 +483,7 @@ body{
 /**** slider ****/
 
 .product-slider-section{
-    padding:35px 0;
+    padding:0px 0;
     text-align:center;
     background:#ffff;
 	max-width: 1180px;
@@ -521,12 +521,13 @@ body{
 }
 
 .productSwiper{
-	position: relative;
-    padding: 0 30px;
-    width:1180px;
-    margin:auto;
-    padding-bottom:60px;
-	overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1114px;
+    margin: auto;
+    padding: 0 30px 90px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .product-card img{
@@ -536,7 +537,7 @@ body{
 
 .product-card h3{
     color:#0057a8;
-    font-size:32px;
+    font-size:20px;
     font-weight:800;
     margin-bottom:1px;
 }
@@ -598,23 +599,25 @@ body{
     overflow: hidden;
     box-shadow: 8px 0 18px rgba(0,0,0,0.22);
     text-align: left;
-	max-width: 225px;
-    
-	
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .product-card img {
     width: 100%;
-    height: 150px;
+    height: auto;
+    max-height: 170px;
     object-fit: contain;
-   
-}
-
-.product-card h3 {
-    font-size: 18px;
-    font-weight: 800;
-    color: #004b9b;
-    margin-bottom: 1px;
     line-height: 1.2;
 }
 
@@ -737,13 +740,6 @@ body{
 	
 }
 
-.swiper-button-prev {
-    left: -5px !important;
-}
-
-.swiper-button-next {
-    right: 10px !important;
-}
 .product-card-inner {
    padding-left: 25px;
 }
@@ -758,39 +754,45 @@ body{
     margin-left:-6px;
 }
 .swiper{
-    padding: 0 40px;
+    padding: 0 10px;
+    height: 100% !important;
 }
 .productSwiper{
     position: relative;
     overflow: hidden;
-    padding: 0 30px;
+    padding: 0 12px;
 }
 
-.swiper-button-next{
-    right: 93px !important;
+.productSwiper .swiper-button-prev,
+.productSwiper .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex !important;
+    width: 85px !important;
+    height: 85px !important;
+    z-index: 10;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.swiper-button-prev{
-    /* left: 10px !important;*/
-    display: flex !important;
-	margin-left: 107px;
+.productSwiper .swiper-button-prev{
+    left: 12px;
+    background-image: url('left-arrow.png');
 }
-.learn-prev
-    display: flex !important;
-	margin-left: 107px;
+
+.productSwiper .swiper-button-next{
+    right: 12px;
+    background-image: url('right-arrow.png');
 }
-.swiper{
- overflow: visible !important;
-	
-	
-}
+
 .category-tabs button {
     font-size: 14px;
 }
 
 .swiper-pagination{
-    bottom: -30px !important;
+    bottom: 10px !important;
 }
 
 
@@ -1081,51 +1083,46 @@ body{
 }
 
 .productSwiper {
+    overflow-x: hidden !important;
+    overflow-y: visible;
     position: relative;
-}
-.productSwiper {
-    width: 85%;
-    margin: 0 auto;
-	overflow: hidden;
-	padding: 0 80px;
+    padding: 50px 0 36px;
 }
 
 .productSwiper .swiper-pagination {
     position: absolute;
-    bottom: -35px !important;
-
-    left: 44% !important;
+    bottom: -44px !important;
+    left: 50% !important;
     transform: translateX(-50%);
-
     width: auto !important;
 }
-
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
     display: none;
 }
-.swiper-button-prev,
-.swiper-button-next {
+.productSwiper .swiper-button-prev,
+.productSwiper .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 85px !important;
     height: 85px !important;
-
+    z-index: 10;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
-    top: 50%;
-    transform: translateY(-50%);
 }
 
-.swiper-button-prev {
+.productSwiper .swiper-button-prev {
     background-image: url('left-arrow.png');
-    left: -10px;
+    left: 12px;
 }
 
-.swiper-button-next {
+.productSwiper .swiper-button-next {
     background-image: url('right-arrow.png');
-    right: -10px;
+    right: 12px;
+}
 }
 
 
@@ -2356,19 +2353,40 @@ body{
     object-fit: contain;
 }
 .productSwiper {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     overflow-y: visible;
     position: relative;
-    padding: 50px 0 70px;
+    padding: 50px 0 10px !important;
+}
+
+.productSwiper .swiper-pagination {
+    display: block !important;
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto 10px;
+    width: auto !important;
+    z-index: 20;
+	margin-top: 30px;
+}
+
+.productSwiper .swiper-pagination-bullet {
+    opacity: 1 !important;
+    background: #cccccc !important;
+}
+
+.productSwiper .swiper-pagination-bullet-active {
+    background: #1a1a1a !important;
 }
 
 .product-slider-section{
-    padding: 35px 0;
+    padding: 0px 0;
     text-align: center;
     background: #ffff;
     /* max-width: 1000px; */
     margin: 0 auto;
-    overflow: hidden;
+    overflow: visible;
 }
 
 
@@ -2444,35 +2462,33 @@ body{
     height:74px;
     border-radius:50%;
     object-fit:cover;
-    margin-bottom:18px;
+    
 }
 
 .testimonial-card h3{
-    font-size:16px;
-    font-weight:800;
-    margin-bottom:10px;
-    color:#111;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #111;
 }
 
 .review-text{
-    font-size:15px;
-    line-height:1.5;
-    color:#222;
-    margin-bottom:18px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #111;
 }
 
 .rating{
-    color:#B4D334;
-    font-size:28px;
-    margin-bottom:10px;
-    letter-spacing:2px;
+    color: #B4D334;
+    font-size: 37px;
+    letter-spacing: 2px;
 }
 
 .testimonial-card h4{
-    font-size:18px;
-    font-weight:800;
-    color:#111;
-    margin-bottom:6px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 6px;
 }
 
 .verified{
@@ -2518,6 +2534,9 @@ body{
     width:42px;
     position:relative;
     top:7px;
+}
+.swiper-wrapper {
+margin-left: 40px !important;
 }
 </style>
 <link rel="stylesheet"
@@ -3647,13 +3666,13 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 const swiper = new Swiper(".productSwiper", {
 
     slidesPerView: 4,
-    spaceBetween: 20,
+    spaceBetween: 12,
     loop: true,
 
-    autoplay: {
+    /*autoplay: {
         delay: 2500,
         disableOnInteraction: true,
-    },
+    },*/
 
     navigation: {
         nextEl: ".swiper-button-next",
