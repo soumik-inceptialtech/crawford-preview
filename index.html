@@ -21,6 +21,10 @@ body{
     color:#fff;
 	overflow-x:hidden;
 }
+html{
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
 /* Top Bar */
 .top-bar{
@@ -2708,6 +2712,9 @@ body{
 
 /* --- TABLET: 992px --- */
 @media(max-width: 992px){
+
+	body, html{ overflow-x: hidden; }
+* { max-width: 100%; box-sizing: border-box; }
 
     /* Top bar: wrap to 2 cols */
     .top-bar .container{
