@@ -80,7 +80,7 @@ body{
     width: 320px;
     height: auto;
     display: block;
-	margin-left: 100px;
+    margin-left: 100px;
 }
 
 .logo span{
@@ -404,24 +404,15 @@ body{
 /* MOBILE */
 @media(max-width:768px){
 
+    /* Keep nav-wrapper as a single row — logo left, hamburger right */
     .navbar .container{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .nav-right{
-        width:100%;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:12px;
-    }
-
-    .search-box{
-        width:100%;
-    }
-
-    .search-box input{
-        width:100%;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        padding: 0 16px;
+		padding-top: 4px;
+        padding-bottom: 9px;
     }
 
 }
@@ -623,6 +614,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+
+@media(max-width: 479px){
+    .productSwiper .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .productSwiper .product-card {
+        max-width: 75%;
+        width: 75%;
+        margin: 0 auto;
+    }
 }
 
 .product-card img {
@@ -1081,7 +1085,9 @@ body{
 /* RESPONSIVE */
 
 @media(max-width: 992px){
-
+    .btn-primary, .btn-outline {
+		height: 32px;
+	}
     .offers-grid{
         grid-template-columns: 1fr;
     }
@@ -1286,6 +1292,8 @@ body{
     .offer-card{
         height: 480px;
     }
+	.explore-offers{ padding: 30px 0; }        /* was: 30px 10px */
+    .offer-card{ height: 420px; border-radius: 0; }
 }
 
 /* JOURNEY SECTION */
@@ -2107,7 +2115,8 @@ body{
 }
 
 @media(max-width: 600px){
-
+	.offer-overlay h3, .gift-card h3 {margin-top: -6px;}
+	.offer-card{ margin-top: 12px; height: 360px; border-radius: 0; }  /* added: border-radius: 0 */
     .showrooms-section{
         padding: 60px 16px 80px;
     }
@@ -2317,6 +2326,19 @@ body{
 
 /* RESPONSIVE */
 @media(max-width: 991px){
+
+	/* Bottom strip bullets */
+.bottom-strip {
+    font-size: 14px;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    padding: 12px 20px;
+    align-items: center;
+}
+.bottom-strip .strip-dot { display: none; }
+.bottom-strip .strip-item { display: flex; align-items: center; gap: 8px; justify-content: center; }
+.bottom-strip .strip-item::before { content: "•"; color: #295ea8; font-size: 18px; flex-shrink: 0; }
 
     .footer-top{
         flex-direction: column;
@@ -2621,9 +2643,354 @@ body{
 .timing-block-extend{
 	width: 122px;
 }
+
+/* ============================================
+   COMPREHENSIVE RESPONSIVE OVERHAUL
+   ============================================ */
+
+/* desktop-only: visible by default, hidden in mobile media query */
+.desktop-only{ display: flex; }
+
+/* Mobile top bar (search + icons above logo) — hidden on desktop */
+.mobile-top-bar{
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+/* Hamburger Button --- */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+    z-index: 100;
+}
+.hamburger span{
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #101b28;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+.hamburger.open span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2){ opacity: 0; }
+.hamburger.open span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile nav drawer */
+.mobile-nav{
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 16px 20px;
+    border-top: 1px solid #eee;
+    list-style: none;
+    gap: 0;
+}
+.mobile-nav.open{ display: flex; }
+.mobile-nav a{
+    color: #101b28;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: block;
+}
+
+/* --- TABLET: 992px --- */
+@media(max-width: 992px){
+
+    /* Top bar: wrap to 2 cols */
+    .top-bar .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        text-align: center;
+    }
+
+    /* Navbar: show hamburger, hide desktop menu */
+    .hamburger{ display: flex; }
+    .nav-menu{ display: none !important; }
+    .desktop-only{ display: none !important; }
+
+    /* Show mobile search bar above logo */
+    .mobile-top-bar{ display: flex; }
+
+    /* Logo fix — no margin, fits on one line */
+    .logo img{
+        margin-left: 0 !important;
+        width: 160px;
+    }
+
+    /* Nav wrapper: strict single row, logo left, hamburger right */
+    .nav-wrapper{
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 0 !important;
+        padding: 8px 16px;
+    }
+
+    .navbar{
+        padding: 0;
+    }
+
+    /* Hero overlay: full width, smaller text */
+    .hero-overlay{
+        width: 100%;
+        padding: 40px 30px;
+    }
+    .hero-overlay h1{ font-size: 46px; }
+    .hero-overlay p{ font-size: 10px; max-width: 60g%; }
+    .hero-buttons{ flex-direction: column; gap: 12px; }
+    .btn{ font-size: 10px; padding: 7px 22px; width: 43%;height: 29px;}
+
+    /* Stats: 2-col grid */
+    .stats-container{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+    .stat-item{
+        width: 45%;
+        padding: 20px 10px;
+    }
+    .stats-container > .divider{
+        display: none;
+    }
+	.stats-section {
+		padding-top: 0px;
+	]
+    /* Product slider: 2 slides */
+    .product-slider-section{
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .product-slider-section h2{ font-size: 30px; }
+    .category-tabs{ gap: 12px; }
+    .category-tabs button{ font-size: 13px; }
+
+    /* Shop your way */
+    .shop-way-wrapper{ flex-direction: column; border-radius: 20px; }
+    .shop-way-section h2{ font-size: 30px; }
+    .category-grid{ grid-template-columns: repeat(3, 1fr); }
+    .brand-grid{ grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+    #shop-by-brand{ margin-right: 0; }
+
+    /* Explore offers: single column */
+    .offers-grid{
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .explore-offers{ padding: 30px 12px; }
+    .explore-offers h2{ font-size: 30px; }
+    .offer-card{ height: 420px; border-radius: 20px; }
+
+    /* Journey section */
+    .journey-section{ padding: 20px 18px; min-height: auto; background-position: top center; background-size: contain; background-repeat: no-repeat; background-color: transparent; align-items: flex-start;}
+    .journey-content{ margin-left: 0; max-width: 100%; }
+    .journey-content h2{ margin-top: -7px;font-size: 17px; margin-bottom: 8px;}
+    .journey-content p{ font-size: 20px; }
+
+    /* Why crawfords */
+    .why-grid{ grid-template-columns: repeat(2, 1fr); }
+    .why-heading h2{ font-size: 30px; }
+
+    /* Minelab hero */
+    .minelab-hero{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        min-height: 420px;
+    }
+    .minelab-content{ padding-left: 30px; }
+    .minelab-content h2{
+        font-size: 36px;
+        padding-left: 0;
+        margin-top: 60px;
+    }
+    .minelab-buttons{ padding-left: 0; }
+
+    /* Testimonials */
+    .testimonial-title{ font-size: 30px !important; }
+
+    /* Showrooms */
+    .showrooms-grid{ grid-template-columns: 1fr; }
+    .showroom-card{ max-width: 100%; }
+    .direction-btn{ position: relative; bottom: auto; left: auto; margin-top: 28px; display: inline-block; }
+
+    /* Footer */
+    .footer-top{ flex-direction: column; gap: 40px; }
+    .footer-about{ margin-top: 0; max-width: 100%; }
+    .footer-links{ gap: 40px; }
+    .footer-middle{ flex-direction: column; align-items: flex-start; gap: 30px; }
+    .finance-info{ border-right: none; padding-right: 0; max-width: 100%; }
+    .footer-logo-area{ justify-content: flex-start; }
+    .footer-bottom{ padding: 22px 20px; }
+}
+
+/* --- MOBILE: 600px --- */
+@media(max-width: 600px){
+
+    /* Top bar: single column */
+    .top-bar .container{
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    .top-bar .container div{ font-size: 12px; }
+
+    /* Nav */
+    .logo img{ width: 170px; }
+
+    /* Search box narrower */
+    .search-box{ width: 160px; }
+    .search-box input{ width: 110px; font-size: 12px; }
+
+    /* Hero */
+    .hero-overlay{ padding: 28px 18px; }
+    .hero-overlay h1{ font-size: 24px; }
+    .hero-overlay p{ width: 60%; font-size: 10px; }
+    .hero-features li{ font-size: 14px; }
+    .bottom-strip{ font-size: 14px; flex-direction: column; gap: 6px; text-align: center; padding: 12px; }
+
+    /* Stats: stack vertically */
+    .stat-item{ width: 100%; padding: 14px 10px; border-bottom: 1px solid #eee; }
+
+    /* Product slider heading */
+    .product-slider-section h2{ font-size: 24px; }
+    .category-tabs{ flex-wrap: wrap; gap: 8px; }
+    .category-tabs button{ font-size: 12px; }
+
+    /* Shop your way */
+    .shop-way-section h2{ font-size: 26px; }
+    .shop-column{ padding: 24px 16px; }
+    .category-grid{ grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .category-card{ width: auto; height: auto; padding: 12px 6px; }
+    .brand-grid{ grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .brand-card{ width: auto; height: 80px; }
+
+    /* Explore offers */
+    .offers-grid{ max-width: 100%; width: 100%; padding: 0; box-sizing: border-box; }
+    .offer-card{ height: 360px; border-radius: 20px; }
+    .explore-offers h2{ font-size: 26px; }
+
+    /* Journey */
+    .journey-section{ padding: 20px 18px; min-height: auto; background-position: top center; background-size: contain; background-repeat: no-repeat; background-color: transparent; align-items: flex-start; }
+	.journey-content{ margin-left: 0; max-width: 100%; }
+    .journey-content h2{ margin-top: -7px;font-size: 17px; margin-bottom: 8px;}
+    .journey-content p{ font-size: 10px; width: 235px; margin-bottom: 8px;}
+    .journey-buttons{ flex-direction: column; align-items: flex-start; gap: 12px; }
+    .btn-primary, .btn-outline{ width: 100%; max-width: 129px; justify-content: center; border-radius: 7px; height: 22px;font-size: 6px;}
+
+    /* Why crawfords */
+    .why-grid{ grid-template-columns: 1fr; }
+    .why-heading h2{ font-size: 26px; }
+    .why-card{ min-height: auto; }
+
+    /* Minelab */
+    .minelab-hero{ min-height: 380px; background-position: 65% center; }
+    .minelab-content h2{ font-size: 28px; margin-top: 40px; }
+    .minelab-buttons{ flex-direction: column; align-items: flex-start; gap: 10px; }
+    .minelab-btn{ width: 100%; max-width: 260px; }
+
+    /* Testimonials */
+    .testimonialSwiper{ padding: 0 14px; }
+    .testimonial-card{ min-height: auto; padding: 20px 14px; }
+
+    /* Showrooms */
+    .showrooms-section{ padding: 40px 14px 80px; }
+    .showrooms-title{ font-size: 28px; margin-bottom: 30px; }
+    .showroom-card{ padding: 24px 20px 70px; }
+    .showroom-heading{ font-size: 24px; }
+    .timing-grid{ flex-wrap: wrap; gap: 12px; }
+    .three-col{ flex-wrap: wrap; }
+    .divider{ width: 100%; height: 1px; }
+    .direction-btn{ left: 20px; }
+
+    /* Footer */
+    .footer-container{ padding: 40px 16px 30px; }
+    .footer-column h3{ font-size: 20px; }
+    .footer-column a{ font-size: 15px; }
+    .footer-about p{ font-size: 15px; }
+    .footer-links{ flex-direction: column; gap: 30px; }
+    .social-icons{ gap: 30px; }
+    .footer-logo-area img{ width: 240px; }
+    .footer-bottom{ flex-direction: column; text-align: center; padding: 18px 16px; font-size: 14px; }
+
+    /* WhatsApp button */
+    .whatsapp-btn{ right: 14px; bottom: 14px; width: 58px; height: 58px; }
+    .whatsapp-btn img{ height: 90px; }
+
+    /* Learn section */
+    .learn-slider-wrapper{ padding: 0 44px; }
+    .learn-detecting-section h2{ font-size: 26px; }
+}
+/* Mobile nav top row (search + icons inside drawer) */
+.mobile-nav-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0 14px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 4px;
+}
+.mobile-search-box{
+    display: flex;
+    align-items: center;
+    border: 1px solid #222;
+    border-radius: 30px;
+    padding: 0 12px;
+    flex: 1;
+    height: 28px;
+    background: #fff;
+}
+.mobile-search-box input{
+    border: none;
+    outline: none;
+    font-size: 13px;
+    flex: 1;
+    background: transparent;
+}
+.mobile-search-box img{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+.mobile-icons{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
+.mobile-icons .icon-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mobile-icons .icon-item img{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+.mobile-icons .icon-item small{
+    font-size: 9px;
+    color: #000;
+}
 </style>
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 
 <body>
@@ -2649,15 +3016,15 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 	</div>
 	
 	<header class="navbar">
-		<!-- TOP ROW -->
-		<div class="top-nav-row">
+	
+		<!-- Desktop: search + icons (hidden on mobile) -->
+		<div class="top-nav-row desktop-only">
 			<div class="container top-nav-inner">
 				<div class="top-right-group">
 					<div class="search-box">
 						<input type="text" placeholder="Search detectors...">
 						<img src="search.png" alt="Search">
 					</div>
-
 					<div class="top-icons">
 						<div class="icon-item">
 							<img src="account.png" alt="Account">
@@ -2670,12 +3037,35 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 					</div>
 				</div>
 			</div>
+		</div>		
+
+		<!-- MOBILE ONLY: search + icons bar above logo -->
+		<div class="mobile-top-bar">
+			<div class="mobile-search-box">
+				<input type="text" placeholder="Search detectors...">
+				<img src="search.png" alt="Search">
+			</div>
+			<div class="mobile-icons">
+				<div class="icon-item">
+					<img src="account.png" alt="Account">
+					<small>Account</small>
+				</div>
+				<div class="icon-item">
+					<img src="cart.png" alt="Cart">
+					<small>Cart</small>
+				</div>
+			</div>
 		</div>
 
+		<!-- MAIN NAV ROW: logo | desktop-menu | search+icons | hamburger -->
 		<div class="container nav-wrapper">
+
+			<!-- Logo always visible -->
 			<div class="logo">
 				<img src="Logo.png" alt="Crawfords Metal Detectors Logo">
 			</div>
+
+			<!-- Desktop nav links (hidden on mobile) -->
 			<ul class="nav-menu">
 				<li><a href="#">Home</a></li>
 				<li><a href="#">Metal Detectors</a></li>
@@ -2685,8 +3075,26 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 				<li><a href="#">Finance</a></li>
 				<li><a href="#">Beginner's Guide</a></li>
 			</ul>
+
+			
+
+			<!-- Hamburger (hidden on desktop) -->
+			<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+				<span></span><span></span><span></span>
+			</button>
+
 		</div>
 	</header>
+	<!-- Mobile nav drawer (no search here anymore) -->
+	<ul class="mobile-nav" id="mobile-nav">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Metal Detectors</a></li>
+		<li><a href="#">Brands</a></li>
+		<li><a href="#">Accessories</a></li>
+		<li><a href="#">Offers</a></li>
+		<li><a href="#">Finance</a></li>
+		<li><a href="#">Beginner's Guide</a></li>
+	</ul>
 	<section class="hero">
 		<div class="hero-box">
 			<img src="hero-image.png" alt="Metal Detector Hero">
@@ -2712,11 +3120,11 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 		</div>
 
 		<div class="bottom-strip">
-			<span>£30 Off Selected Detectors</span>
-			<span>•</span>
-			<span>Earn Diggits Rewards</span>
-			<span>•</span>
-			<span>Order within <strong>02:15:30</strong> for same-day dispatch</span>
+			<span class="strip-item">£30 Off Selected Detectors</span>
+			<span class="strip-dot">•</span>
+			<span class="strip-item">Earn Diggits Rewards</span>
+			<span class="strip-dot">•</span>
+			<span class="strip-item">Order within <strong>02:15:30</strong> for same-day dispatch</span>
 		</div>
 	</section>
 
@@ -3779,6 +4187,7 @@ const swiper = new Swiper(".productSwiper", {
     slidesPerView: 4,
     spaceBetween: 12,
     loop: true,
+    centeredSlides: false,
 
     autoplay: {
         delay: 2500,
@@ -3793,6 +4202,13 @@ const swiper = new Swiper(".productSwiper", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+    },
+
+    breakpoints: {
+        0:   { slidesPerView: 1, spaceBetween: 10, centeredSlides: true },
+        480: { slidesPerView: 2, spaceBetween: 12, centeredSlides: false },
+        768: { slidesPerView: 3, spaceBetween: 12, centeredSlides: false },
+        1024:{ slidesPerView: 4, spaceBetween: 12, centeredSlides: false },
     }
 });
 
@@ -3869,6 +4285,22 @@ document.querySelector('.testimonial-prev')?.addEventListener('click', function(
     e.preventDefault();
     testimonialSwiper.slidePrev();
 });
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+        hamburger.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+    });
+    // Close on link click
+    mobileNav.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+            hamburger.classList.remove('open');
+            mobileNav.classList.remove('open');
+        });
+    });
+}
 </script>
 </body>
 </html>
