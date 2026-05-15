@@ -2728,7 +2728,7 @@ body{
     /* Logo fix — no margin, fits on one line */
     .logo img{
         margin-left: 0 !important;
-        width: 160px;
+        width: 180px;
     }
 
     /* Nav wrapper: strict single row, logo left, hamburger right */
@@ -2751,9 +2751,12 @@ body{
         padding: 40px 30px;
     }
     .hero-overlay h1{ font-size: 46px; }
-    .hero-overlay p{ font-size: 10px; max-width: 60g%; }
+    .hero-overlay p{ font-size: 9px; max-width: 60g%; }
     .hero-buttons{ flex-direction: column; gap: 12px; }
-    .btn{ font-size: 10px; padding: 7px 22px; width: 43%;height: 29px;}
+    .btn{ font-size: 7px;
+        padding: 7px 20px;
+        width: 40%;
+        height: 25px;}
 
     /* Stats: 2-col grid */
     .stats-container{
@@ -2844,6 +2847,21 @@ body{
 /* --- MOBILE: 600px --- */
 @media(max-width: 600px){
 
+        .offer-btn {
+            border: none;
+            background: linear-gradient(180deg, #ffb300, #ff8f00);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 0;
+            margin-top: -60px;
+        }
+
+	.stat-item img {width: 55px; height: auto;}
     /* Top bar: single column */
     .top-bar .container{
         grid-template-columns: 1fr;
@@ -2852,7 +2870,7 @@ body{
     .top-bar .container div{ font-size: 12px; }
 
     /* Nav */
-    .logo img{ width: 170px; }
+    .logo img{ width: 180px; }
 
     /* Search box narrower */
     .search-box{ width: 160px; }
@@ -2861,12 +2879,17 @@ body{
     /* Hero */
     .hero-overlay{ padding: 28px 18px; }
     .hero-overlay h1{ font-size: 24px; }
-    .hero-overlay p{ width: 60%; font-size: 10px; }
+    .hero-overlay p{ width: 60%; font-size: 9px; }
     .hero-features li{ font-size: 14px; }
     .bottom-strip{ font-size: 14px; flex-direction: column; gap: 6px; text-align: center; padding: 12px; }
 
     /* Stats: stack vertically */
-    .stat-item{ width: 100%; padding: 14px 10px; border-bottom: 1px solid #eee; }
+    .stat-item{ width: 48%; padding: 14px 10px; border-bottom: 1px solid #eee; text-align: center; display: flex; flex-direction: column; align-items: center; }
+	.stat-item h3{ font-size: 16px; white-space: nowrap; text-align: center; }
+	.stats-container > .divider{ display: none !important; width: 0; height: 0; overflow: hidden; }
+	.stat-item p{ font-size: 11px; white-space: normal; text-align: center; width: 100%; }
+	.stat-item h3{ font-size: 16px; margin-left: 44px; white-space: nowrap;}
+	.stat-item p{ font-size: 11px; white-space: normal; text-align: center; }
 
     /* Product slider heading */
     .product-slider-section h2{ font-size: 24px; }
