@@ -1792,7 +1792,7 @@ html{
 
 .minelab-hero{
     position: relative;
-    min-height: 498px;
+    min-height: 625px;
     margin: 10px auto;
 
     border-radius: 0px;
@@ -1961,7 +1961,9 @@ html{
 
 .showrooms-grid{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, minmax(0, 486px));
+width: 100%;
+box-sizing: border-box;
     justify-content: center;
     gap: 24px;
 }
@@ -1971,7 +1973,7 @@ html{
     border-radius: 22px;
     padding: 34px 38px 26px;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12), 0 0 0 8px #dfeffc;
     width: 100%;
     max-width: 486px;
 }
@@ -2627,10 +2629,11 @@ html{
 }
 
 @media(max-width:768px){
-
+	.showrooms-title {padding-top: 5px;}
     .testimonial-title{
-        font-size:36px;
+        font-size:27px;
     }
+	.testimonial-title{margin-top: 13px;}
 
     .testimonialSwiper{
         padding:0 20px;
@@ -2647,7 +2650,9 @@ html{
 .timing-block-extend{
 	width: 122px;
 }
-
+.showrooms-footer-wrapper{
+    background: #143a86;
+}
 /* ============================================
    COMPREHENSIVE RESPONSIVE OVERHAUL
    ============================================ */
@@ -2816,8 +2821,10 @@ html{
     .journey-content p{ font-size: 20px; }
 
     /* Why crawfords */
-    .why-grid{ grid-template-columns: repeat(2, 1fr); }
-    .why-heading h2{ font-size: 30px; }
+    .why-grid{ grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 16px; }
+.why-heading h2{ font-size: 30px; }
+.why-crawfords-section{ padding: 30px 16px; }  /* added */
+.why-grid{ gap: 12px; }                          /* added */
 
     /* Minelab hero */
     .minelab-hero{
@@ -2834,7 +2841,7 @@ html{
     .minelab-buttons{ padding-left: 0; }
 
     /* Testimonials */
-    .testimonial-title{ font-size: 30px !important; }
+    .testimonial-title{ font-size: 29px !important; }
 
     /* Showrooms */
     .showrooms-grid{ grid-template-columns: 1fr; }
@@ -2895,7 +2902,7 @@ html{
 	.stat-item h3{ font-size: 16px; white-space: nowrap; text-align: center; }
 	.stats-container > .divider{ display: none !important; width: 0; height: 0; overflow: hidden; }
 	.stat-item p{ font-size: 11px; white-space: normal; text-align: center; width: 100%; }
-	.stat-item h3{ font-size: 16px; margin-left: 44px; white-space: nowrap;}
+	.stat-item h3{ font-size: 16px; white-space: nowrap;}
 	.stat-item p{ font-size: 11px; white-space: normal; text-align: center; }
 
     /* Product slider heading */
@@ -2925,9 +2932,12 @@ html{
     .btn-primary, .btn-outline{ width: 100%; max-width: 129px; justify-content: center; border-radius: 7px; height: 22px;font-size: 6px;}
 
     /* Why crawfords */
-    .why-grid{ grid-template-columns: 1fr; }
-    .why-heading h2{ font-size: 26px; }
+    .why-grid{ grid-template-columns: 1fr; gap: 12px; padding: 0 16px; }
+    .why-heading h2{ font-size: 22px; }
     .why-card{ min-height: auto; }
+	
+	.learn-detecting-section { padding: 27px 0; }
+	.tp-text { font-size: 22px; }
 
     /* Minelab */
     .minelab-hero{ min-height: 380px; background-position: 65% center; }
@@ -3019,6 +3029,7 @@ html{
     font-size: 9px;
     color: #000;
 }
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
@@ -3952,6 +3963,7 @@ html{
 
 </section>
 <!-- SHOWROOMS SECTION -->
+<div class="showrooms-footer-wrapper">
 <section class="showrooms-section">
   <div class="showrooms-container">
 
@@ -4082,6 +4094,7 @@ html{
     </div>
   </div>
 </section>
+</div>
 
 <!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
