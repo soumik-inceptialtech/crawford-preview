@@ -21,10 +21,6 @@ body{
     color:#fff;
 	overflow-x:hidden;
 }
-html{
-    overflow-x: hidden;
-    max-width: 100%;
-}
 
 /* Top Bar */
 .top-bar{
@@ -494,6 +490,7 @@ html{
     background:#ffff;
 	max-width: 1180px;
     margin: 0 auto;
+	overflow: hidden;
 }
 
 .product-slider-section h2{
@@ -532,8 +529,8 @@ html{
     width: 100%;
     max-width: 1114px;
     margin: auto;
-    padding: 0 30px 90px;
-    overflow: hidden;
+    padding: 0 30px 90px 50px;
+    overflow: visible;
     box-sizing: border-box;
 }
 
@@ -604,7 +601,7 @@ html{
     background: #fff;
     border-radius: 14px 14px 0 0;
     overflow: hidden;
-    box-shadow: 8px 0 18px rgba(0,0,0,0.22);
+    box-shadow: 8px 0 18px rgba(0,0,0,0.22), 0 8px 12px rgba(0,0,0,0.15);
     text-align: left;
     width: 100%;
     max-width: 250px;
@@ -799,12 +796,12 @@ html{
 }
 
 .productSwiper .swiper-button-prev{
-    left: 12px;
+    left: -2px;
     background-image: url('left-arrow.png');
 }
 
 .productSwiper .swiper-button-next{
-    right: 12px;
+    right: -2px;
     background-image: url('right-arrow.png');
 }
 
@@ -1139,12 +1136,12 @@ html{
 
 .productSwiper .swiper-button-prev {
     background-image: url('left-arrow.png');
-    left: 12px;
+    left: -25px;
 }
 
 .productSwiper .swiper-button-next {
     background-image: url('right-arrow.png');
-    right: 12px;
+    right: -18px;
 }
 }
 
@@ -1449,6 +1446,7 @@ html{
     max-width: 1180px;
     margin: auto;
     padding: 0 70px;
+	overflow: visible;
 }
 
 /* SWIPER */
@@ -1792,7 +1790,7 @@ html{
 
 .minelab-hero{
     position: relative;
-    min-height: 625px;
+    min-height: 498px;
     margin: 10px auto;
 
     border-radius: 0px;
@@ -1927,7 +1925,9 @@ html{
 
     .minelab-btn{
         width: 100%;
-        max-width: 260px;
+        max-width: 134px;
+		height: 22px;
+		font-size: 9px;
     }
 }
 
@@ -1961,9 +1961,7 @@ html{
 
 .showrooms-grid{
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 486px));
-width: 100%;
-box-sizing: border-box;
+    grid-template-columns: auto auto;
     justify-content: center;
     gap: 24px;
 }
@@ -1973,7 +1971,7 @@ box-sizing: border-box;
     border-radius: 22px;
     padding: 34px 38px 26px;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12), 0 0 0 8px #dfeffc;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     width: 100%;
     max-width: 486px;
 }
@@ -2091,7 +2089,14 @@ box-sizing: border-box;
 }
 
 @media(max-width: 992px){
-
+	/* Why crawfords */
+    .why-grid{ grid-template-columns: 1fr; gap: 12px; padding: 0 16px; }
+    .why-heading h2{ font-size: 22px; }
+    .why-card{ min-height: auto; }
+	.why-heading {
+		text-align: center;
+		margin-bottom: 23px;
+	}
     .showrooms-grid{
         grid-template-columns: 1fr;
     }
@@ -2414,7 +2419,8 @@ box-sizing: border-box;
     overflow-x: hidden !important;
     overflow-y: visible;
     position: relative;
-    padding: 15px 0 10px !important;
+    /* padding: 15px 0 10px !important; */
+	padding: 15px 10px 0px 10px !important;
 }
 
 .productSwiper .swiper-pagination {
@@ -2462,7 +2468,7 @@ box-sizing: border-box;
 }
 
 .testimonial-title{
-    margin-top: 53px;
+    margin-top: 0spx;
     text-align: center;
     font-size: 42px;
     font-weight: 800;
@@ -2629,11 +2635,10 @@ box-sizing: border-box;
 }
 
 @media(max-width:768px){
-	.showrooms-title {padding-top: 5px;}
+
     .testimonial-title{
-        font-size:27px;
+        font-size:24px;
     }
-	.testimonial-title{margin-top: 13px;}
 
     .testimonialSwiper{
         padding:0 20px;
@@ -2650,9 +2655,7 @@ box-sizing: border-box;
 .timing-block-extend{
 	width: 122px;
 }
-.showrooms-footer-wrapper{
-    background: #143a86;
-}
+
 /* ============================================
    COMPREHENSIVE RESPONSIVE OVERHAUL
    ============================================ */
@@ -2718,9 +2721,6 @@ box-sizing: border-box;
 /* --- TABLET: 992px --- */
 @media(max-width: 992px){
 
-	body, html{ overflow-x: hidden; }
-* { max-width: 100%; box-sizing: border-box; }
-
     /* Top bar: wrap to 2 cols */
     .top-bar .container{
         display: grid;
@@ -2728,6 +2728,8 @@ box-sizing: border-box;
         gap: 8px;
         text-align: center;
     }
+	
+	
 
     /* Navbar: show hamburger, hide desktop menu */
     .hamburger{ display: flex; }
@@ -2765,10 +2767,7 @@ box-sizing: border-box;
     .hero-overlay h1{ font-size: 46px; }
     .hero-overlay p{ font-size: 9px; max-width: 60g%; }
     .hero-buttons{ flex-direction: column; gap: 12px; }
-    .btn{ font-size: 7px;
-        padding: 7px 20px;
-        width: 40%;
-        height: 25px;}
+    .btn{ font-size: 9px; padding: 7px 22px; width: 43%;height: 29px;}
 
     /* Stats: 2-col grid */
     .stats-container{
@@ -2817,14 +2816,12 @@ box-sizing: border-box;
     /* Journey section */
     .journey-section{ padding: 20px 18px; min-height: auto; background-position: top center; background-size: contain; background-repeat: no-repeat; background-color: transparent; align-items: flex-start;}
     .journey-content{ margin-left: 0; max-width: 100%; }
-    .journey-content h2{ margin-top: -7px;font-size: 17px; margin-bottom: 8px;}
+    .journey-content h2{ margin-top: -7px;font-size: 17px; margin-bottom: 6px;}
     .journey-content p{ font-size: 20px; }
 
     /* Why crawfords */
-    .why-grid{ grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 16px; }
-.why-heading h2{ font-size: 30px; }
-.why-crawfords-section{ padding: 30px 16px; }  /* added */
-.why-grid{ gap: 12px; }                          /* added */
+    .why-grid{ grid-template-columns: repeat(2, 1fr); }
+    .why-heading h2{ font-size: 30px; }
 
     /* Minelab hero */
     .minelab-hero{
@@ -2841,7 +2838,7 @@ box-sizing: border-box;
     .minelab-buttons{ padding-left: 0; }
 
     /* Testimonials */
-    .testimonial-title{ font-size: 29px !important; }
+    .testimonial-title{ font-size: 30px !important; }
 
     /* Showrooms */
     .showrooms-grid{ grid-template-columns: 1fr; }
@@ -2902,8 +2899,22 @@ box-sizing: border-box;
 	.stat-item h3{ font-size: 16px; white-space: nowrap; text-align: center; }
 	.stats-container > .divider{ display: none !important; width: 0; height: 0; overflow: hidden; }
 	.stat-item p{ font-size: 11px; white-space: normal; text-align: center; width: 100%; }
-	.stat-item h3{ font-size: 16px; white-space: nowrap;}
+	.stat-item h3{ font-size: 16px;white-space: nowrap;}
 	.stat-item p{ font-size: 11px; white-space: normal; text-align: center; }
+	
+	.productSwiper .swiper-button-next {
+		background-image: url(right-arrow.png);
+		right: 12px;
+	}
+	.productSwiper .swiper-button-prev {
+		background-image: url(left-arrow.png);
+		left: 12px;
+	}
+	.journey-overlay {
+		position: absolute;
+		inset: 0;
+		background: none;
+	}
 
     /* Product slider heading */
     .product-slider-section h2{ font-size: 24px; }
@@ -2926,24 +2937,42 @@ box-sizing: border-box;
     /* Journey */
     .journey-section{ padding: 20px 18px; min-height: auto; background-position: top center; background-size: contain; background-repeat: no-repeat; background-color: transparent; align-items: flex-start; }
 	.journey-content{ margin-left: 0; max-width: 100%; }
-    .journey-content h2{ margin-top: -7px;font-size: 17px; margin-bottom: 8px;}
-    .journey-content p{ font-size: 10px; width: 235px; margin-bottom: 8px;}
-    .journey-buttons{ flex-direction: column; align-items: flex-start; gap: 12px; }
+    .journey-content h2{ margin-top: -7px;font-size: 17px; margin-bottom: 4px;}
+    .journey-content p{ font-size: 10px; width: 235px; margin-bottom: 6px;}
+    .journey-buttons{ flex-direction: column; align-items: flex-start; gap: 8px; }
     .btn-primary, .btn-outline{ width: 100%; max-width: 129px; justify-content: center; border-radius: 7px; height: 22px;font-size: 6px;}
 
     /* Why crawfords */
-    .why-grid{ grid-template-columns: 1fr; gap: 12px; padding: 0 16px; }
+    .why-grid{ grid-template-columns: 1fr; }
     .why-heading h2{ font-size: 22px; }
     .why-card{ min-height: auto; }
 	
-	.learn-detecting-section { padding: 27px 0; }
-	.tp-text { font-size: 22px; }
+	.learn-detecting-section { padding: 2px 0;}
+	.learn-bottom-btn {
+		margin-top: 29px;
+		margin-bottom: 15px;
+	}
+	.minelab-content h2 {
+		font-size: 14px;
+		margin-top: -4px;
+		margin-bottom: 6px;
+	}
 
     /* Minelab */
-    .minelab-hero{ min-height: 380px; background-position: 65% center; }
-    .minelab-content h2{ font-size: 28px; margin-top: 40px; }
+    .minelab-hero{ min-height: 216px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top; }
+	.minelab-content h2 { padding-left: 9px; }
+    .minelab-content h2{ font-size: 13px; margin-top: -4px; }
     .minelab-buttons{ flex-direction: column; align-items: flex-start; gap: 10px; }
-    .minelab-btn{ width: 100%; max-width: 260px; }
+    .minelab-btn{
+        width: 100%;
+        max-width: 134px;
+		height: 22px;
+		font-size: 8px;
+		border-radius: 10px;
+    }s
 
     /* Testimonials */
     .testimonialSwiper{ padding: 0 14px; }
@@ -2959,6 +2988,14 @@ box-sizing: border-box;
     .divider{ width: 100%; height: 1px; }
     .direction-btn{ left: 20px; }
 
+	.learn-bottom-btn {
+		margin-top: 29px;
+		margin-bottom: 15px;
+	}
+	.minelab-content h2 {
+		font-size: 14px;
+		margin-top: -8px;
+	}
     /* Footer */
     .footer-container{ padding: 40px 16px 30px; }
     .footer-column h3{ font-size: 20px; }
@@ -2976,6 +3013,13 @@ box-sizing: border-box;
     /* Learn section */
     .learn-slider-wrapper{ padding: 0 44px; }
     .learn-detecting-section h2{ font-size: 26px; }
+	
+	.minelab-buttons {
+		padding-left: 9px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 3px;
+	}
 }
 /* Mobile nav top row (search + icons inside drawer) */
 .mobile-nav-top{
@@ -3029,7 +3073,6 @@ box-sizing: border-box;
     font-size: 9px;
     color: #000;
 }
-
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
@@ -3657,10 +3700,11 @@ box-sizing: border-box;
 
 		</div>
 		<!-- ARROWS OUTSIDE SWIPER -->
+		<div class="swiper-button-prev learn-prev"></div>
+			<div class="swiper-button-next learn-next"></div>
 		</div>	
     </div>
-<div class="swiper-button-prev learn-prev"></div>
-			<div class="swiper-button-next learn-next"></div>
+			
     <!-- BOTTOM BUTTON -->
     <div class="learn-bottom-btn">
         <a href="#">Explore All Guides →</a>
@@ -3963,7 +4007,6 @@ box-sizing: border-box;
 
 </section>
 <!-- SHOWROOMS SECTION -->
-<div class="showrooms-footer-wrapper">
 <section class="showrooms-section">
   <div class="showrooms-container">
 
@@ -4094,7 +4137,6 @@ box-sizing: border-box;
     </div>
   </div>
 </section>
-</div>
 
 <!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -4292,6 +4334,10 @@ const testimonialSwiper = new Swiper(".testimonialSwiper", {
     spaceBetween: 24,
     loop: true,
     
+	autoplay: {
+        delay: 2500,
+        disableOnInteraction: true,
+    },
 
     navigation: {
         nextEl: ".testimonial-next",
