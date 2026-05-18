@@ -2099,6 +2099,22 @@ body{
     background: #003f7d;
 }
 
+.footer-btn{
+    flex: 1;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 12px 0;
+    background: #f5f5f5;
+    border: none;
+    border-right: 1px solid #ddd;
+    color: black;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.footer-btn:last-child{ border-right: none; }
+.footer-btn:hover{ background: #0054A6; color: #fff; }
+
 @media(max-width: 992px){
 	/* Why crawfords */
     .why-grid{ grid-template-columns: 1fr; gap: 12px; padding: 0 16px; }
@@ -2600,19 +2616,20 @@ body{
 .testimonial-prev{
     position: absolute;
     top: 50%;
+	background-color: transparent !important;
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.14);
+    box-shadow: none !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
     z-index: 20;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 20px 20px;
+    background-size: 20px;
     cursor: pointer;
     opacity: 1;
 }
@@ -3299,8 +3316,8 @@ body{
 							<button class="cart-btn">ADD TO CART</button>
 						</div>	
 						<div class="card-footer">
-							<span>QUICK VIEW</span>
-							<span>COMPARE</span>
+							<button class="footer-btn quick-view-btn">QUICK VIEW</button>
+							<button class="footer-btn compare-btn">COMPARE</button>
 						</div>
 					</div>
 				</div>
@@ -3325,8 +3342,8 @@ body{
 							<button class="cart-btn">ADD TO CART</button>
 						</div>	
 						<div class="card-footer">
-							<span>QUICK VIEW</span>
-							<span>COMPARE</span>
+							<button class="footer-btn quick-view-btn">QUICK VIEW</button>
+							<button class="footer-btn compare-btn">COMPARE</button>
 						</div>
 					</div>
 				</div>
@@ -3350,8 +3367,8 @@ body{
 							<button class="cart-btn">ADD TO CART</button>
 						</div>	
 						<div class="card-footer">
-							<span>QUICK VIEW</span>
-							<span>COMPARE</span>
+							<button class="footer-btn quick-view-btn">QUICK VIEW</button>
+							<button class="footer-btn compare-btn">COMPARE</button>
 						</div>
 					</div>
 				</div>
@@ -3375,8 +3392,8 @@ body{
 							<button class="cart-btn">ADD TO CART</button>
 						</div>	
 						<div class="card-footer">
-							<span>QUICK VIEW</span>
-							<span>COMPARE</span>
+							<button class="footer-btn quick-view-btn">QUICK VIEW</button>
+							<button class="footer-btn compare-btn">COMPARE</button>
 						</div>
 					</div>
 				</div>
@@ -3400,8 +3417,8 @@ body{
 							<button class="cart-btn">ADD TO CART</button>
 						</div>	
 						<div class="card-footer">
-							<span>QUICK VIEW</span>
-							<span>COMPARE</span>
+							<button class="footer-btn quick-view-btn">QUICK VIEW</button>
+							<button class="footer-btn compare-btn">COMPARE</button>
 						</div>
 					</div>
 				</div>
@@ -4291,10 +4308,10 @@ const swiper = new Swiper(".productSwiper", {
     loop: true,
     centeredSlides: false,
 
-    autoplay: {
+    /*autoplay: {
         delay: 2500,
         disableOnInteraction: true,
-    },
+    },*/
 
     navigation: {
         nextEl: ".swiper-button-next",
@@ -4320,10 +4337,10 @@ const learnSwiper = new Swiper(".learnSwiper", {
     spaceBetween: 20,
     loop: true,
 	
-	autoplay: {
+	/*autoplay: {
         delay: 2500,
         disableOnInteraction: true,
-    },
+    },*/
 
     navigation: {
         nextEl: ".learn-next",
@@ -4355,10 +4372,10 @@ const testimonialSwiper = new Swiper(".testimonialSwiper", {
     spaceBetween: 24,
     loop: true,
     
-	autoplay: {
+	/*autoplay: {
         delay: 2500,
         disableOnInteraction: true,
-    },
+    },*/
 
     navigation: {
         nextEl: ".testimonial-next",
