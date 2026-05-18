@@ -2721,7 +2721,7 @@ body{
 
 /* --- TABLET: 992px --- */
 @media(max-width: 992px){
-
+	.brand-card{ width: 100%; }
 	.bottom-row {
 		padding-left: 0px;
 	}	
@@ -2803,8 +2803,8 @@ body{
     .shop-way-wrapper{ flex-direction: column; border-radius: 20px; }
     .shop-way-section h2{ font-size: 30px; }
     .category-grid{ grid-template-columns: repeat(3, 1fr); }
-    .brand-grid{ grid-template-columns: repeat(2, 1fr); max-width: 100%; }
-    #shop-by-brand{ margin-right: 0; }
+    .brand-grid{ grid-template-columns: repeat(2, 1fr); max-width: 100%; justify-content: center; margin: 0 auto; }
+	#shop-by-brand{ margin-right: 0; margin-left: auto; margin-right: auto; display: block; text-align: center; }
 
     /* Explore offers: single column */
     .offers-grid{
@@ -2862,7 +2862,7 @@ body{
 
 /* --- MOBILE: 600px --- */
 @media(max-width: 600px){
-
+		.brand-card{ width: 100%; }
         .offer-btn {
             border: none;
             background: linear-gradient(180deg, #ffb300, #ff8f00);
@@ -2933,8 +2933,8 @@ body{
     .shop-column{ padding: 24px 16px; }
     .category-grid{ grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .category-card{ width: auto; height: auto; padding: 12px 6px; }
-    .brand-grid{ grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .brand-card{ width: auto; height: 80px; }
+    .brand-grid{ grid-template-columns: repeat(2, 1fr); gap: 14px; justify-content: center; margin: 0 auto; }
+	#shop-by-brand{ margin-right: 0; margin-left: auto; margin-right: auto; display: block; text-align: center; }
 
     /* Explore offers */
     .offers-grid{ max-width: 100%; width: 100%; padding: 0; box-sizing: border-box; }
