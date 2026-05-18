@@ -783,6 +783,7 @@ body{
 
 .productSwiper .swiper-button-prev,
 .productSwiper .swiper-button-next {
+	display: none !important;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1123,6 +1124,7 @@ body{
 }
 .productSwiper .swiper-button-prev,
 .productSwiper .swiper-button-next {
+    display: none !important;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -2721,6 +2723,10 @@ body{
 /* --- TABLET: 992px --- */
 @media(max-width: 992px){
 
+	.bottom-row {
+		padding-left: 0px;
+	}	
+
     /* Top bar: wrap to 2 cols */
     .top-bar .container{
         display: grid;
@@ -4124,7 +4130,7 @@ body{
 
         </div>
 
-        <div style="color:red;font-weight: 800;font-size: 14px;">
+        <div style="color:red;font-weight: 700;font-size: 14px;">
 		<span class="what3words">/// </span>&nbsp;musical.laying.shortland
         </div>
 
@@ -4274,10 +4280,10 @@ const swiper = new Swiper(".productSwiper", {
     loop: true,
     centeredSlides: false,
 
-    /*autoplay: {
+    autoplay: {
         delay: 2500,
         disableOnInteraction: true,
-    },*/
+    },
 
     navigation: {
         nextEl: ".swiper-button-next",
@@ -4334,10 +4340,10 @@ const testimonialSwiper = new Swiper(".testimonialSwiper", {
     spaceBetween: 24,
     loop: true,
     
-	/*autoplay: {
+	autoplay: {
         delay: 2500,
         disableOnInteraction: true,
-    },*/
+    },
 
     navigation: {
         nextEl: ".testimonial-next",
@@ -4374,6 +4380,18 @@ document.querySelector('.testimonial-prev')?.addEventListener('click', function(
     e.preventDefault();
     testimonialSwiper.slidePrev();
 });
+
+document.querySelectorAll('.category-tabs button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+        // Remove active from all buttons
+        document.querySelectorAll('.category-tabs button').forEach(function(b){
+            b.classList.remove('active');
+        });
+        // Add active to clicked button
+        this.classList.add('active');
+    });
+});
+
 // Hamburger menu toggle
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobile-nav');
