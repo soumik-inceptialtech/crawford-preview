@@ -1644,7 +1644,7 @@ body{
     grid-template-columns: repeat(4, 260px);
     justify-content: center;
 
-    gap: 18px;
+    gap: 11px;
 }
 
 /* CARD */
@@ -1811,8 +1811,11 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-	margin-left: calc(50% - 56vw);
-    margin-right: calc(50% - 56vw);
+	/* margin-left: calc(50% - 56vw);
+    margin-right: calc(50% - 56vw); */
+	margin-left: 0;
+    margin-right: 0;
+    width: 100%;
 }
 
 /* DARK LEFT OVERLAY */
@@ -1943,7 +1946,14 @@ body{
 }
 
 
-
+.main-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
 
 
 /* SHOWROOMS SECTION */
@@ -2969,7 +2979,7 @@ body{
     .explore-offers h2{ font-size: 26px; }
 
     /* Journey */
-    .journey-section{ padding: 20px 18px; min-height: auto; background-position: top center; background-size: contain; background-repeat: no-repeat; background-color: transparent; align-items: flex-start; }
+    .journey-section{ /*padding: 20px 18px;*/ min-height: auto; background-position: top center; background-size: contain; background-repeat: no-repeat; background-color: transparent; align-items: flex-start; }
 	.journey-content{ margin-left: 0; max-width: 100%; }
     .journey-content h2{ margin-top: -7px;font-size: 17px; margin-bottom: 4px;}
     .journey-content p{ font-size: 10px; width: 235px; margin-bottom: 6px;}
@@ -3123,86 +3133,87 @@ body{
 
 
 
-	
-	<div class="top-bar">
-		<div class="container">
-			<div><i class="fa-solid fa-phone"></i> Scunthorpe: 01724 845608</div>
-			<div><i class="fa-solid fa-phone"></i> Ferndown: 01202 091648</div>
-			<div><i class="fa-solid fa-truck"></i> Free UK Delivery On Orders Over £99</div>
-			<div><i class="fa-solid fa-shield-halved"></i> Official Minelab Authorised Dealer</div>
+	<header class="main-header">
+		<div class="top-bar">
+			<div class="container">
+				<div><i class="fa-solid fa-phone"></i> Scunthorpe: 01724 845608</div>
+				<div><i class="fa-solid fa-phone"></i> Ferndown: 01202 091648</div>
+				<div><i class="fa-solid fa-truck"></i> Free UK Delivery On Orders Over £99</div>
+				<div><i class="fa-solid fa-shield-halved"></i> Official Minelab Authorised Dealer</div>
+			</div>
 		</div>
-	</div>
-	
-	<header class="navbar">
-	
-		<!-- Desktop: search + icons (hidden on mobile) -->
-		<div class="top-nav-row desktop-only">
-			<div class="container top-nav-inner">
-				<div class="top-right-group">
-					<div class="search-box">
-						<input type="text" placeholder="Search detectors...">
-						<img src="search.png" alt="Search">
-					</div>
-					<div class="top-icons">
-						<div class="icon-item">
-							<img src="account.png" alt="Account">
-							<small>Account</small>
+		
+		<header class="navbar">
+		
+			<!-- Desktop: search + icons (hidden on mobile) -->
+			<div class="top-nav-row desktop-only">
+				<div class="container top-nav-inner">
+					<div class="top-right-group">
+						<div class="search-box">
+							<input type="text" placeholder="Search detectors...">
+							<img src="search.png" alt="Search">
 						</div>
-						<div class="icon-item">
-							<img src="cart.png" alt="Cart">
-							<small>Cart</small>
+						<div class="top-icons">
+							<div class="icon-item">
+								<img src="account.png" alt="Account">
+								<small>Account</small>
+							</div>
+							<div class="icon-item">
+								<img src="cart.png" alt="Cart">
+								<small>Cart</small>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>		
+			</div>		
 
-		<!-- MOBILE ONLY: search + icons bar above logo -->
-		<div class="mobile-top-bar">
-			<div class="mobile-search-box">
-				<input type="text" placeholder="Search detectors...">
-				<img src="search.png" alt="Search">
-			</div>
-			<div class="mobile-icons">
-				<div class="icon-item">
-					<img src="account.png" alt="Account">
-					<small>Account</small>
+			<!-- MOBILE ONLY: search + icons bar above logo -->
+			<div class="mobile-top-bar">
+				<div class="mobile-search-box">
+					<input type="text" placeholder="Search detectors...">
+					<img src="search.png" alt="Search">
 				</div>
-				<div class="icon-item">
-					<img src="cart.png" alt="Cart">
-					<small>Cart</small>
+				<div class="mobile-icons">
+					<div class="icon-item">
+						<img src="account.png" alt="Account">
+						<small>Account</small>
+					</div>
+					<div class="icon-item">
+						<img src="cart.png" alt="Cart">
+						<small>Cart</small>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- MAIN NAV ROW: logo | desktop-menu | search+icons | hamburger -->
-		<div class="container nav-wrapper">
+			<!-- MAIN NAV ROW: logo | desktop-menu | search+icons | hamburger -->
+			<div class="container nav-wrapper">
 
-			<!-- Logo always visible -->
-			<div class="logo">
-				<img src="Logo.png" alt="Crawfords Metal Detectors Logo">
+				<!-- Logo always visible -->
+				<div class="logo">
+					<img src="Logo.png" alt="Crawfords Metal Detectors Logo">
+				</div>
+
+				<!-- Desktop nav links (hidden on mobile) -->
+				<ul class="nav-menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Metal Detectors</a></li>
+					<li><a href="#">Brands</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Offers</a></li>
+					<li><a href="#">Finance</a></li>
+					<li><a href="#">Beginner's Guide</a></li>
+				</ul>
+
+				
+
+				<!-- Hamburger (hidden on desktop) -->
+				<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+					<span></span><span></span><span></span>
+				</button>
+
 			</div>
-
-			<!-- Desktop nav links (hidden on mobile) -->
-			<ul class="nav-menu">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Metal Detectors</a></li>
-				<li><a href="#">Brands</a></li>
-				<li><a href="#">Accessories</a></li>
-				<li><a href="#">Offers</a></li>
-				<li><a href="#">Finance</a></li>
-				<li><a href="#">Beginner's Guide</a></li>
-			</ul>
-
-			
-
-			<!-- Hamburger (hidden on desktop) -->
-			<button class="hamburger" id="hamburger" aria-label="Toggle menu">
-				<span></span><span></span><span></span>
-			</button>
-
-		</div>
-	</header>
+		</header>
+	</header>	
 	<!-- Mobile nav drawer (no search here anymore) -->
 	<ul class="mobile-nav" id="mobile-nav">
 		<li><a href="#">Home</a></li>
