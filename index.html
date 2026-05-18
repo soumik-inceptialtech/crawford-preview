@@ -1296,6 +1296,11 @@ body{
     }
 	.explore-offers{ padding: 30px 0; }        /* was: 30px 10px */
     .offer-card{ height: 420px; border-radius: 0; }
+	
+	.learn-prev,
+    .learn-next {
+        display: none !important;
+    }
 }
 
 /* JOURNEY SECTION */
@@ -1400,6 +1405,11 @@ body{
 
 /* Responsive */
 @media(max-width:768px){
+
+	.learn-prev,
+    .learn-next {
+        display: none !important;
+    }
 
     .journey-section{
         padding: 40px 24px;
@@ -1533,34 +1543,34 @@ body{
 }
 
 /* NAVIGATION */
-.learn-prev,
-.learn-next{
-    width: 32px !important;
-    height: 32px !important;
-
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+.learn-prev.swiper-button-prev,
+.learn-next.swiper-button-next {
+    width: 58px !important;
+    height: 58px !important;
 
     background-color: #fff;
     border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 92px;
 
-    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-    cursor: pointer;
+    /* increase arrow image size */
+    background-size: 85px;
+
+    /* box-shadow: 0 4px 14px rgba(0,0,0,0.12); */
 }
 
-.learn-prev{
-    left: 0;
+.learn-prev.swiper-button-prev{
+    left: 10px;
     background-image: url('left-arrow.png');
 }
 
-.learn-next{
-    right: 0;
+.learn-next.swiper-button-next{
+    right: 10px;
     background-image: url('right-arrow.png');
 }
 
@@ -4308,8 +4318,12 @@ const learnSwiper = new Swiper(".learnSwiper", {
 
     slidesPerView: 3,
     spaceBetween: 20,
-
     loop: true,
+	
+	autoplay: {
+        delay: 2500,
+        disableOnInteraction: true,
+    },
 
     navigation: {
         nextEl: ".learn-next",
