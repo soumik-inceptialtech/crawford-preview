@@ -27,6 +27,7 @@ body{
     background:#295ea8;
     padding:12px 15px;
 	font-size:13px;
+
 }
 
 .top-bar .container{
@@ -39,7 +40,7 @@ body{
     justify-content:center;
     align-items:center;
     /*gap:51px;
-    flex-wrap:wrap;*/s
+    flex-wrap:wrap;*/
     text-align:center;
 }
 
@@ -107,7 +108,16 @@ body{
 .nav-menu a:hover{
     color:#f7b733;
 }
+/* ==========================================================================
+   MOBILE OFF-CANVAS SLIDE NAVIGATION SYSTEM
+   ========================================================================== */
 
+
+
+/* When Javascript assigns the '.open' class, the browser animates the change seamlessly */
+#mobile-nav.open {
+    transform: translateX(-280px) !important; 
+}
 /* Hero */
 .hero{
     //padding:40px 0 60px;
@@ -1278,7 +1288,39 @@ body{
 .offer-btn:hover{
     transform: scale(1.03);
 }
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
 
+    transform: translateX(100%);
+    transition: transform 0.45s ease;
+
+    padding-top: 70px;
+}
+
+.mobile-nav.open{
+    transform: translateX(0);
+}
+
+/* CLOSE BUTTON */
+.close-menu{
+    background: none;
+    border: none;
+
+    font-size: 34px;
+    line-height: 1;
+
+    cursor: pointer;
+    color: #111;
+
+    /* REMOVE THESE */
+    position: static;
+}
 /* RESPONSIVE */
 
 @media(max-width: 992px){
@@ -2159,6 +2201,12 @@ body{
     .three-col{
         flex-wrap: wrap;
     }
+	.hamburger{ display: flex; }
+    .nav-menu{ display: none !important; }
+    .desktop-only{ display: none !important; }
+    .mobile-top-bar{ display: flex; }
+    .nav-wrapper{ flex-wrap: nowrap; justify-content: space-between; }
+    .logo img{ margin-left: 0; width: 160px; }
 }
 
 @media(max-width: 600px){
@@ -2374,15 +2422,20 @@ body{
 /* RESPONSIVE */
 @media(max-width: 991px){
 
+	.testimonial-next,
+    .testimonial-prev{
+        display: none !important;
+    }
+
 	/* Bottom strip bullets */
-.bottom-strip {
-    font-size: 14px;
-    flex-direction: column;
-    gap: 6px;
-    text-align: center;
-    padding: 12px 20px;
-    align-items: center;
-}
+	.bottom-strip {
+		font-size: 14px;
+		flex-direction: column;
+		gap: 6px;
+		text-align: center;
+		padding: 12px 20px;
+		align-items: center;
+	}
 .bottom-strip .strip-dot { display: none; }
 .bottom-strip .strip-item { display: flex; align-items: center; gap: 8px; justify-content: center; }
 .bottom-strip .strip-item::before { content: "•"; color: #295ea8; font-size: 18px; flex-shrink: 0; }
@@ -2412,6 +2465,11 @@ body{
 }
 
 @media(max-width: 768px){
+
+	.testimonial-next,
+    .testimonial-prev{
+        display: none !important;
+    }
 
     .footer-container{
         padding: 60px 24px 40px;
@@ -2747,15 +2805,27 @@ body{
 
 /* Mobile nav drawer */
 .mobile-nav{
-    display: none;
+    display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 0; right: 0;
+    width: 280px;
+    height: 100vh;
     background: #fff;
-    padding: 16px 20px;
-    border-top: 1px solid #eee;
-    list-style: none;
-    gap: 0;
+    z-index: 99999;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
 }
-.mobile-nav.open{ display: flex; }
+.mobile-nav.open{
+    transform: translateX(0) !important;
+    visibility: visible !important;
+}
+.mobile-nav-close{ display: flex; justify-content: flex-end; padding: 8px 0 16px; border-bottom: 2px solid #eee; }
+#mobile-nav-close-btn{ background: none; border: none; font-size: 22px; cursor: pointer; color: #101b28; }
+
 .mobile-nav a{
     color: #101b28;
     text-decoration: none;
@@ -2764,10 +2834,18 @@ body{
     padding: 12px 0;
     border-bottom: 1px solid #f0f0f0;
     display: block;
+	padding-top: 20px;
+    padding-left: 24px;
 }
 
 /* --- TABLET: 992px --- */
 @media(max-width: 992px){
+
+.testimonial-next,
+    .testimonial-prev{
+        display: none !important;
+    }
+
 	.brand-card{ width: 100%; }
 	.bottom-row {
 		padding-left: 0px;
@@ -2784,8 +2862,12 @@ body{
 	
 
     /* Navbar: show hamburger, hide desktop menu */
-    .hamburger{ display: flex; }
-    .nav-menu{ display: none !important; }
+    .hamburger{ display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+	.hamburger span{ display: block; width: 26px; height: 3px; background: #101b28; border-radius: 3px; transition: 0.3s; }
+	.hamburger.open span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+	.hamburger.open span:nth-child(2){ opacity: 0; }
+	.hamburger.open span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+	.nav-menu{ display: none !important; }
     .desktop-only{ display: none !important; }
 
     /* Show mobile search bar above logo */
@@ -2909,6 +2991,7 @@ body{
 
 /* --- MOBILE: 600px --- */
 @media(max-width: 600px){
+		
 		.brand-card{ width: 100%; }
         .offer-btn {
             border: none;
@@ -3085,6 +3168,26 @@ body{
     border-bottom: 2px solid #eee;
     margin-bottom: 4px;
 }
+
+#mobile-nav {
+		position: fixed;
+	  top: 0;
+	  right: 0;
+	  width: 280px;
+	  height: 100vh;
+	  background: #fff;
+	  box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+	  z-index: 2000;
+	  overflow-y: auto;
+	  transform: translateX(100%);
+	  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	  will-change: transform; 
+}
+
+.mobile-nav.open { display: flex; }
+
+/* When Javascript assigns the '.open' class, the transition engine handles the movement path */
+
 .mobile-search-box{
     display: flex;
     align-items: center;
@@ -3128,6 +3231,38 @@ body{
     color: #000;
 }
 
+
+/* TOP ROW */
+.mobile-nav-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 20px;
+    border-bottom: 1px solid #ddd;
+
+    list-style: none;
+	padding-top: 0px; 
+}
+
+/* LOGO */
+.mobile-logo{
+    width: 140px;
+    height: auto;
+    display: block;
+}
+
+/* CLOSE BUTTON */
+.close-menu{
+    background: none;
+    border: none;
+
+    font-size: 34px;
+    line-height: 1;
+
+    cursor: pointer;
+    color: #111;
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
@@ -3227,6 +3362,18 @@ body{
 		
 	<!-- Mobile nav drawer (no search here anymore) -->
 	<ul class="mobile-nav" id="mobile-nav">
+
+		<li class="mobile-nav-top">
+
+        <img src="Logo.png"
+             alt="Crawfords Metal Detectors Logo"
+             class="mobile-logo">
+
+        <button class="close-menu" id="close-menu">
+            &times;
+        </button>
+
+    </li>
 		<li><a href="#">Home</a></li>
 		<li><a href="#">Metal Detectors</a></li>
 		<li><a href="#">Brands</a></li>
@@ -3285,7 +3432,7 @@ body{
 			<div class="stat-item">
 				<img src="people.png" alt="Customers Icon">
 				<h3>20,000+</h3>
-				<p>Happy Customers ✅</p>
+				<p>Happy Customers</p>
 			</div>
 
 			<div class="divider"></div>
@@ -4451,7 +4598,7 @@ document.querySelectorAll('.category-tabs button').forEach(function(btn){
 });
 
 // Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
+/*const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobile-nav');
 if(hamburger && mobileNav){
     hamburger.addEventListener('click', function(){
@@ -4465,7 +4612,123 @@ if(hamburger && mobileNav){
             mobileNav.classList.remove('open');
         });
     });
-}
+}*/
+
+// Ensure script executes cleanly after the document layout is built
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // --- 1. PROGRAMMATIC DYNAMIC STICKY HEADER ---
+    const topBar = document.querySelector('.top-bar');
+    const navbar = document.querySelector('.navbar');
+	const closeBtn = document.getElementById('close-menu');
+    
+    if (topBar && navbar) {
+        // Measure heights dynamically
+        const topBarHeight = topBar.offsetHeight;
+        const navbarHeight = navbar.offsetHeight;
+        const totalHeaderHeight = topBarHeight + navbarHeight;
+
+        // Apply sticky properties
+        topBar.style.position = 'fixed';
+        topBar.style.top = '0';
+        topBar.style.left = '0';
+        topBar.style.width = '100%';
+        topBar.style.zIndex = '1001';
+
+        navbar.style.position = 'fixed';
+        navbar.style.top = `${topBarHeight}px`; // Sits right under top-bar
+        navbar.style.left = '0';
+        navbar.style.width = '100%';
+        navbar.style.zIndex = '1000';
+        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+
+        // Prevent content clipping behind the fixed header canvas
+        document.body.style.paddingTop = `${totalHeaderHeight}px`;
+    }
+
+    // --- 2. RESPONSIVE HERO IMAGE BREAKOUT (NO WHITE GUTTERS) ---
+    const heroSection = document.querySelector('.minelab-hero');
+    
+    function handleHeroResize() {
+        if (!heroSection) return;
+        
+        if (window.innerWidth <= 768) {
+            // Force mobile image edge-to-edge calculation loops
+            heroSection.style.width = '100vw';
+            heroSection.style.marginLeft = '50%';
+            heroSection.style.transform = 'translateX(-50%)';
+            heroSection.style.marginRight = '0';
+            heroSection.style.backgroundSize = 'cover';
+        } else {
+            // Restore desktop constraints smoothly
+            heroSection.style.width = '';
+            heroSection.style.marginLeft = 'calc(50% - 56vw)';
+            heroSection.style.marginRight = 'calc(50% - 56vw)';
+            heroSection.style.transform = '';
+            heroSection.style.backgroundSize = 'cover';
+        }
+    }
+	
+	function closeMenu() {
+
+		mobileNav.classList.remove('open');
+		hamburger.classList.remove('open');
+
+		mobileNav.style.transform = 'translateX(100%)';
+
+		document.body.style.overflow = '';
+	}
+
+    
+    // Fire image stretching constraints on resize and initialization step
+    window.addEventListener('resize', handleHeroResize);
+    handleHeroResize();
+
+    // --- 3. HARDWARE-ACCELERATED MOBILE MENU ANIMATIONS ---
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    
+    if (mobileNav) {
+        // Inject baseline styles directly via JS logic engine
+        mobileNav.style.position = 'fixed';
+        mobileNav.style.top = '0';
+        mobileNav.style.right = '-280px'; // Off-screen clearance caching
+        mobileNav.style.width = '280px';
+        mobileNav.style.height = '100vh';
+        mobileNav.style.zIndex = '2000';
+        mobileNav.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        mobileNav.style.transform = 'translateX(0)';
+    }
+
+    // Intercept line elements to coordinate the transform "X" morph sequence
+    let spans = hamburger ? hamburger.querySelectorAll('span') : [];
+    spans.forEach(span => span.style.transition = 'all 0.3s ease-in-out');
+
+    function toggleMobileMenu() {
+		const isOpen = mobileNav.classList.toggle('open');
+		hamburger.classList.toggle('open');
+		if (isOpen) {
+			mobileNav.style.transform = 'translateX(0)';
+			mobileNav.style.visibility = 'visible';
+			document.body.style.overflow = 'hidden';
+		} else {
+			mobileNav.style.transform = 'translateX(100%)';
+			mobileNav.style.visibility = 'hidden';
+			document.body.style.overflow = '';
+		}
+	}
+
+    // Hamburger click
+	hamburger.addEventListener('click', toggleMobileMenu);
+
+	// Close button click
+	closeBtn.addEventListener('click', toggleMobileMenu);
+
+	// Close on link click
+	mobileNav.querySelectorAll('a').forEach(link => {
+		link.addEventListener('click', toggleMobileMenu);
+	});
+});
 </script>
 </body>
 </html>
