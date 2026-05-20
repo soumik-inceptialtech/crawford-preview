@@ -496,7 +496,7 @@ body{
     padding:0px 0;
     text-align:center;
     background:#ffff;
-	max-width: 1180px;
+	/* max-width: 1180px; */
     margin: 0 auto;
 	overflow: hidden;
 }
@@ -535,7 +535,7 @@ body{
 .productSwiper{
     position: relative;
     width: 100%;
-    max-width: 1114px;
+    /* max-width: 1114px; */
     margin: auto;
     padding: 0 30px 90px 50px;
     overflow: visible;
@@ -597,7 +597,7 @@ body{
 }
 
 .product-slider-section {
-    max-width: 1180px;
+    /* max-width: 1180px; */
     margin: 0px auto;
     text-align: center;
 	overflow: hidden;
@@ -1146,7 +1146,7 @@ body{
 
 .productSwiper .swiper-button-prev {
     background-image: url('left-arrow.png');
-    left: -25px;
+    left: -9px;
 }
 
 .productSwiper .swiper-button-next {
@@ -2165,6 +2165,7 @@ body{
 .footer-btn:last-child{ border-right: none; }
 .footer-btn:hover{ background: #0054A6; color: #fff; }
 
+.swiper-wrapper {margin-left: 30px;}
 @media(max-width: 992px){
 	/* Why crawfords */
     .why-grid{ grid-template-columns: 1fr; gap: 12px; padding: 0 16px; }
@@ -2513,7 +2514,7 @@ body{
     overflow-y: visible;
     position: relative;
     /* padding: 15px 0 10px !important; */
-	padding: 15px 10px 0px 10px !important;
+	padding: 15px 18px 0px 30px !important;
 }
 
 .productSwiper .swiper-pagination {
@@ -4476,7 +4477,7 @@ body{
 const swiper = new Swiper(".productSwiper", {
 
     slidesPerView: 4,
-    spaceBetween: 12,
+    spaceBetween: 1,
     loop: true,
     centeredSlides: false,
 
@@ -4499,7 +4500,7 @@ const swiper = new Swiper(".productSwiper", {
         0:   { slidesPerView: 1, spaceBetween: 10, centeredSlides: true },
         480: { slidesPerView: 2, spaceBetween: 12, centeredSlides: false },
         768: { slidesPerView: 3, spaceBetween: 12, centeredSlides: false },
-        1024:{ slidesPerView: 4, spaceBetween: 12, centeredSlides: false },
+        1024:{ slidesPerView: 4, spaceBetween: 1, centeredSlides: false },
     }
 });
 
