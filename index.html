@@ -1918,15 +1918,13 @@ h1, h2, h3, h4, h5, h6{
 
 /* CONTENT */
 .minelab-content{
+
     position: relative;
     z-index: 2;
-
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding-left: 78px;
 }
 
@@ -2756,12 +2754,12 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .testimonial-next{
-    right: -38px !important;
+    right: -50px !important;
     background-image: url('right_arrow_testimonial.png');
 }
 
 .testimonial-prev{
-    left: -38px !important;
+    left: -50px !important;
     background-image: url('left_arrow_testimonial.png');
 }
 
@@ -3302,6 +3300,18 @@ h1, h2, h3, h4, h5, h6{
 
     cursor: pointer;
     color: #111;
+}
+@media (min-width: 1440px) {
+    .minelab-hero {
+        min-height: 600px; /* Scales up the banner height */
+    }
+}
+
+/*️ Targets Extra Large / Ultrawide Screens (e.g., 1920px wide and up) */
+@media (min-width: 1920px) {
+    .minelab-hero {
+        min-height: 720px; /* Scales it up even further so the image doesn't crop tightly */
+    }
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
