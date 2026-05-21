@@ -1712,6 +1712,38 @@ h1, h2, h3, h4, h5, h6{
     transition: 0.3s ease;
 }
 
+/* Card 1 — bottom-right thick */
+.why-card:nth-child(1){
+    border-top: 1px solid rgba(0, 84, 166, 0.4);
+    border-right: 5px solid rgba(0, 84, 166, 0.8);
+    border-bottom: 5px solid rgba(0, 84, 166, 0.8);
+    border-left: 1px solid rgba(0, 84, 166, 0.4);
+}
+
+/* Card 2 — top-left thick */
+.why-card:nth-child(2){
+    border-top: 5px solid rgba(0, 84, 166, 0.8);
+    border-right: 1px solid rgba(0, 84, 166, 0.4);
+    border-bottom: 1px solid rgba(0, 84, 166, 0.4);
+    border-left: 5px solid rgba(0, 84, 166, 0.8);
+}
+
+/* Card 3 — top-right thick */
+.why-card:nth-child(3){
+    border-top: 1px solid rgba(0, 84, 166, 0.4);
+    border-right: 1px solid rgba(0, 84, 166, 0.4);
+    border-bottom: 5px solid rgba(0, 84, 166, 0.8);
+    border-left: 5px solid rgba(0, 84, 166, 0.8);
+}
+
+/* Card 4 — bottom-left thick */
+.why-card:nth-child(4){
+	border-top: 5px solid rgba(0, 84, 166, 0.8);
+    border-right: 5px solid rgba(0, 84, 166, 0.8);
+    border-bottom: 1px solid rgba(0, 84, 166, 0.4);
+    border-left: 1px solid rgba(0, 84, 166, 0.4);
+}
+
 .why-card.active{
     border: 3px solid #0054A6;
 }
@@ -3951,7 +3983,7 @@ h1, h2, h3, h4, h5, h6{
         </div>
 
         <!-- CARD 2 -->
-        <div class="why-card active">
+        <div class="why-card">
             <div class="why-icon">
                 <img src="n2.png" alt="">
             </div>
@@ -4508,7 +4540,7 @@ const swiper = new Swiper(".productSwiper", {
         0:   { slidesPerView: 1, spaceBetween: 10, centeredSlides: true },
         480: { slidesPerView: 2, spaceBetween: 12, centeredSlides: false },
         768: { slidesPerView: 3, spaceBetween: 12, centeredSlides: false },
-        1024:{ slidesPerView: 4, spaceBetween: 12, centeredSlides: false },
+        1024:{ slidesPerView: 4, spaceBetween: 8, centeredSlides: false },
     }
 });
 
@@ -4541,7 +4573,7 @@ const learnSwiper = new Swiper(".learnSwiper", {
 
         1200: {
             slidesPerView: 3,
-			spaceBetween: 12
+			spaceBetween: 8
         }
 
     }
