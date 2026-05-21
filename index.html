@@ -2892,6 +2892,20 @@ h1, h2, h3, h4, h5, h6{
     padding-left: 24px;
 }
 
+/* Targets Large Screens (e.g., 1440px wide and up) */
+@media (min-width: 1440px) {
+    .minelab-hero {
+        min-height: 600px; /* Scales up the banner height */
+    }
+}
+
+/* Targets Extra Large / Ultrawide Screens (e.g., 1920px wide and up) */
+@media (min-width: 1920px) {
+    .minelab-hero {
+        min-height: 720px; /* Scales it up even further so the image doesn't crop tightly */
+    }
+}
+
 /* --- TABLET: 992px --- */
 @media(max-width: 992px){
 
@@ -3301,18 +3315,7 @@ h1, h2, h3, h4, h5, h6{
     cursor: pointer;
     color: #111;
 }
-@media (min-width: 1440px) {
-    .minelab-hero {
-        min-height: 600px; /* Scales up the banner height */
-    }
-}
 
-/*️ Targets Extra Large / Ultrawide Screens (e.g., 1920px wide and up) */
-@media (min-width: 1920px) {
-    .minelab-hero {
-        min-height: 720px; /* Scales it up even further so the image doesn't crop tightly */
-    }
-}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
