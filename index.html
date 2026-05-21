@@ -2908,7 +2908,7 @@ h1, h2, h3, h4, h5, h6{
         min-height: 720px; /* Scales it up even further so the image doesn't crop tightly */
     }
 	.minelab-content h2 {
-        margin-top: 230px; /* Increased proportionately */
+        margin-top: 250px; /* Increased proportionately */
     }
 }
 
@@ -2987,9 +2987,7 @@ h1, h2, h3, h4, h5, h6{
         width: 45%;
         padding: 20px 10px;
     }
-    .stats-container > .divider{
-        display: none;
-    }
+    
 	.stats-section {
 		padding-top: 0px;
 	]
@@ -3106,7 +3104,14 @@ h1, h2, h3, h4, h5, h6{
     /* Stats: stack vertically */
     .stat-item{ width: 48%; padding: 14px 10px; border-bottom: 1px solid #eee; text-align: center; display: flex; flex-direction: column; align-items: center; }
 	.stat-item h3{ font-size: 16px; white-space: nowrap; text-align: center; }
-	.stats-container > .divider{ display: none !important; width: 0; height: 0; overflow: hidden; }
+	.stats-container > .divider{             width: 1px;
+            height: 50px;
+            background: #8aa8d8;
+            position: relative;
+            top: 0px; }
+	.stats-container > .divider:nth-of-type(4) {
+        display: none;
+    }		
 	.stat-item p{ font-size: 11px; white-space: normal; text-align: center; width: 100%; }
 	.stat-item h3{ font-size: 16px;white-space: nowrap;}
 	.stat-item p{ font-size: 11px; white-space: normal; text-align: center; }
