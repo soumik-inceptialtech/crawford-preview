@@ -134,6 +134,7 @@ h1, h2, h3, h4, h5, h6{
 /* When Javascript assigns the '.open' class, the browser animates the change seamlessly */
 #mobile-nav.open {
     transform: translateX(-280px) !important; 
+	transition: transform 0.7s ease;
 }
 /* Hero */
 .hero{
@@ -647,6 +648,7 @@ h1, h2, h3, h4, h5, h6{
         display: flex;
         justify-content: center;
         align-items: flex-start;
+		margin-left: -18px;
     }
     .productSwiper .product-card {
         max-width: 75%;
@@ -1162,13 +1164,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .productSwiper .swiper-button-prev {
-    background-image: url('left-arrow.png');
-    left: -9px;
+        background-image: url(left_arrow_testimonial.png);
+    left: 10px;
+    width: 48px !important;
+    height: 48px !important;
 }
 
 .productSwiper .swiper-button-next {
-    background-image: url('right-arrow.png');
-    right: -18px;
+    background-image: url(right_arrow_testimonial.png);
+    right: -2px;
+	width: 48px !important;
+    height: 48px !important;	
 }
 }
 
@@ -1303,24 +1309,6 @@ h1, h2, h3, h4, h5, h6{
 
 .offer-btn:hover{
     transform: scale(1.03);
-}
-.mobile-nav{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 260px;
-    height: 100vh;
-    background: #fff;
-    z-index: 9999;
-
-    transform: translateX(100%);
-    transition: transform 0.45s ease;
-
-    padding-top: 70px;
-}
-
-.mobile-nav.open{
-    transform: translateX(0);
 }
 
 /* CLOSE BUTTON */
@@ -1522,6 +1510,10 @@ h1, h2, h3, h4, h5, h6{
 .learnSwiper{
     overflow: hidden;
 }
+.learnSwiper {
+    max-width: 1054px;
+    margin: 0 auto;
+}
 
 /* CARD */
 .learn-card{
@@ -1559,7 +1551,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .learn-content p{
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.4;
     margin-bottom: 16px;
     color: black;
@@ -1623,13 +1615,15 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .learn-prev.swiper-button-prev{
-    left: 10px;
-    background-image: url('left-arrow.png');
+    left: 31px;
+    background-image: url(left_arrow_testimonial.png);
+	background-size: 41px;
 }
 
 .learn-next.swiper-button-next{
     right: 10px;
-    background-image: url('right-arrow.png');
+    background-image: url('right_arrow_testimonial.png');
+	background-size: 41px;
 }
 
 /* REMOVE DEFAULT SWIPER ICONS */
@@ -2825,20 +2819,33 @@ h1, h2, h3, h4, h5, h6{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0; right: 0;
+    top: 0;
+    right: 0;
+
     width: 280px;
     height: 100vh;
+
     background: #fff;
     z-index: 99999;
+
     transform: translateX(100%);
-    visibility: hidden;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.4s ease;
+
     overflow-y: auto;
+
     box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+	padding-top: 70px
 }
+
 .mobile-nav.open{
     transform: translateX(0) !important;
-    visibility: visible !important;
+    opacity: 1;
+    pointer-events: auto;
 }
 .mobile-nav-close{ display: flex; justify-content: flex-end; padding: 8px 0 16px; border-bottom: 2px solid #eee; }
 #mobile-nav-close-btn{ background: none; border: none; font-size: 22px; cursor: pointer; color: #101b28; }
@@ -3186,22 +3193,6 @@ h1, h2, h3, h4, h5, h6{
     margin-bottom: 4px;
 }
 
-#mobile-nav {
-		position: fixed;
-	  top: 0;
-	  right: 0;
-	  width: 280px;
-	  height: 100vh;
-	  background: #fff;
-	  box-shadow: -5px 0 25px rgba(0,0,0,0.15);
-	  z-index: 2000;
-	  overflow-y: auto;
-	  transform: translateX(100%);
-	  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-	  will-change: transform; 
-}
-
-.mobile-nav.open { display: flex; }
 
 /* When Javascript assigns the '.open' class, the transition engine handles the movement path */
 
@@ -4517,7 +4508,7 @@ const swiper = new Swiper(".productSwiper", {
         0:   { slidesPerView: 1, spaceBetween: 10, centeredSlides: true },
         480: { slidesPerView: 2, spaceBetween: 12, centeredSlides: false },
         768: { slidesPerView: 3, spaceBetween: 12, centeredSlides: false },
-        1024:{ slidesPerView: 4, spaceBetween: 1, centeredSlides: false },
+        1024:{ slidesPerView: 4, spaceBetween: 12, centeredSlides: false },
     }
 });
 
@@ -4550,6 +4541,7 @@ const learnSwiper = new Swiper(".learnSwiper", {
 
         1200: {
             slidesPerView: 3,
+			spaceBetween: 12
         }
 
     }
@@ -4633,7 +4625,7 @@ if(hamburger && mobileNav){
 
 // Ensure script executes cleanly after the document layout is built
 document.addEventListener("DOMContentLoaded", function () {
-    
+   
     // --- 1. PROGRAMMATIC DYNAMIC STICKY HEADER ---
     const topBar = document.querySelector('.top-bar');
     const navbar = document.querySelector('.navbar');
@@ -4687,7 +4679,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 	
 	function closeMenu() {
-
+        
 		mobileNav.classList.remove('open');
 		hamburger.classList.remove('open');
 
@@ -4725,14 +4717,20 @@ document.addEventListener("DOMContentLoaded", function () {
 		const isOpen = mobileNav.classList.toggle('open');
 		hamburger.classList.toggle('open');
 		if (isOpen) {
+		    console.log('open');
 			mobileNav.style.transform = 'translateX(0)';
 			mobileNav.style.visibility = 'visible';
 			document.body.style.overflow = 'hidden';
 		} else {
+			console.log('close');
 			mobileNav.style.transform = 'translateX(100%)';
-			mobileNav.style.visibility = 'hidden';
+			/* mobileNav.style.visibility = 'hidden'; */
+			
 			document.body.style.overflow = '';
-		}
+			setTimeout(() => {
+				mobileNav.classList.remove('open');
+			}, 700); // match t
+				}
 	}
 
     // Hamburger click
