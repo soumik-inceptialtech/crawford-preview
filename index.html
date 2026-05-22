@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2077,7 +2078,7 @@ h1, h2, h3, h4, h5, h6{
     position: relative;
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     width: 100%;
-    max-width: 486px;
+    min-width: 477px;
 }
 
 .showroom-heading{
@@ -2802,7 +2803,7 @@ h1, h2, h3, h4, h5, h6{
 	/* margin-right: 94px; */
 }
 .timing-block-extend{
-	width: 122px;
+	width: 156px;
 }
 
 /* ============================================
@@ -3065,6 +3066,13 @@ h1, h2, h3, h4, h5, h6{
 
 /* --- MOBILE: 600px --- */
 @media(max-width: 600px){
+        .learn-slider-wrapper{
+			margin-left: -38px;
+		}
+		.showroom-card{
+			max-width: 486px;
+			min-width: 0px;
+		}
 
 		.category-tabs{ display: none; }
 		.category-tabs-mobile{ display: flex; }
@@ -4392,39 +4400,39 @@ h1, h2, h3, h4, h5, h6{
 				<i class="fa-solid fa-clock"></i>
 			</span>
           <div class="timing-block timing-block-extend">
-            <h4>Mon–Tue:</h4>
+            <h4>Mon–Tue , Thu–Fri :</h4>
             <p>9:00am – 5:00pm</p>
           </div>
 
           <div class="divider"></div>
 
           <div class="timing-block">
-            <h4>Wed:</h4>
-            <p>Closed</p>
+			<h4>Saturday:</h4>
+            <p>10:00am – 12:00pm</p>
           </div>
 
-          <div class="divider"></div>
+         <!--  <div class="divider"></div>
 
           <div class="timing-block">
             <h4>Thu–Fri:</h4>
             <p>9:00am – 5:00pm</p>
-          </div>
+          </div> -->
 
         </div>
 
         <div class="timing-grid bottom-row">
 
           <div class="timing-block">
-            <h4>Saturday:</h4>
-            <p>10:00am – 12:00pm</p>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="timing-block timing-block-extend">
-            <h4>Sunday:</h4>
+			<h4>Wed – Sunday :</h4>
             <p>Closed</p>
           </div>
+
+          <!-- <div class="divider"></div> -->
+
+          <!-- <div class="timing-block timing-block-extend">
+            <h4>Sunday:</h4>
+            <p>Closed</p>
+          </div> -->
 
         </div>
 
@@ -4437,6 +4445,7 @@ h1, h2, h3, h4, h5, h6{
         </a>
 
       </div>
+
 
     </div>
   </div>
