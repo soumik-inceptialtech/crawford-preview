@@ -1948,7 +1948,8 @@ h1, h2, h3, h4, h5, h6{
     gap: 12px;
 	padding-left: 148px;
 }
-
+.category-tabs{ display: flex; }
+.category-tabs-mobile{ display: none; }
 /* COMMON BUTTON */
 .minelab-btn{
     height: 44px;
@@ -2866,11 +2867,9 @@ h1, h2, h3, h4, h5, h6{
     transition:
         transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
         opacity 0.4s ease;
-
     overflow-y: auto;
-
     box-shadow: -5px 0 25px rgba(0,0,0,0.15);
-	padding-top: 70px
+	
 }
 
 .mobile-nav.open{
@@ -2889,7 +2888,7 @@ h1, h2, h3, h4, h5, h6{
     padding: 12px 0;
     border-bottom: 1px solid #f0f0f0;
     display: block;
-	padding-top: 20px;
+	padding-top: 11px;
     padding-left: 24px;
 }
 
@@ -3062,8 +3061,36 @@ h1, h2, h3, h4, h5, h6{
     .footer-bottom{ padding: 22px 20px; }
 }
 
+
+
 /* --- MOBILE: 600px --- */
 @media(max-width: 600px){
+
+		.category-tabs{ display: none; }
+		.category-tabs-mobile{ display: flex; }
+		
+		.category-tabs-mobile button {
+			border: none;
+			background: none;
+			font-size: 15px;
+			font-weight: 700;
+			cursor: pointer;
+		}
+		
+		.category-tabs-mobile {
+			display: flex;
+			justify-content: center;
+			gap: 8px;
+			margin-bottom: 10px;
+			flex-wrap: wrap;
+		}
+		
+		.category-tabs-mobile .active {
+			background: #0057a8;
+			color: #fff;
+			padding: 7px 16px;
+			border-radius: 8px;
+		}
 		
 		.brand-card{ width: 100%; }
         .offer-btn {
@@ -3134,7 +3161,7 @@ h1, h2, h3, h4, h5, h6{
 	}
 
     /* Product slider heading */
-    .product-slider-section h2{ font-size: 24px; }
+    .product-slider-section h2{ font-size: 22px; }
     .category-tabs{ flex-wrap: wrap; gap: 8px; }
     .category-tabs button{ font-size: 12px; }
 
@@ -3299,19 +3326,18 @@ h1, h2, h3, h4, h5, h6{
 /* TOP ROW */
 .mobile-nav-top{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 18px 20px;
-    border-bottom: 1px solid #ddd;
-
-    list-style: none;
-	padding-top: 0px; 
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 20px;
+        border-bottom: 1px solid #ddd;
+        list-style: none;
+        padding-top: 44px;
+        height: 74px;
 }
 
 /* LOGO */
 .mobile-logo{
-    width: 140px;
+    width: 170px;
     height: auto;
     display: block;
 }
@@ -3430,7 +3456,7 @@ h1, h2, h3, h4, h5, h6{
 
 		<li class="mobile-nav-top">
 
-        <img src="Logo.png"
+        <img src="Crawford_logo.png"
              alt="Crawfords Metal Detectors Logo"
              class="mobile-logo">
 
@@ -3527,6 +3553,13 @@ h1, h2, h3, h4, h5, h6{
 			<button>BEST FOR BEGINNERS</button>
 			<button>TOP ALL-ROUNDERS</button>
 			<button>PROFESSIONAL GRADE</button>
+		</div>
+
+		<div class="category-tabs-mobile">
+			<button class="active">ALL</button>
+			<button>BEGINNERS</button>
+			<button>ALL-ROUNDERS</button>
+			<button>GRADE</button>
 		</div>
 
 		<div class="swiper productSwiper">
@@ -4656,6 +4689,17 @@ document.querySelectorAll('.category-tabs button').forEach(function(btn){
     btn.addEventListener('click', function(){
         // Remove active from all buttons
         document.querySelectorAll('.category-tabs button').forEach(function(b){
+            b.classList.remove('active');
+        });
+        // Add active to clicked button
+        this.classList.add('active');
+    });
+});
+
+document.querySelectorAll('.category-tabs-mobile button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+        // Remove active from all buttons
+        document.querySelectorAll('.category-tabs-mobile button').forEach(function(b){
             b.classList.remove('active');
         });
         // Add active to clicked button
