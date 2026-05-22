@@ -556,7 +556,7 @@ h1, h2, h3, h4, h5, h6{
     width: 100%;
     /* max-width: 1114px; */
     margin: auto;
-    padding: 0 30px 90px 50px;
+    padding: 0 0.5vw 90px 0.5vw;
     overflow: visible;
     box-sizing: border-box;
 }
@@ -2509,7 +2509,13 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media(max-width: 768px){
-
+	
+	.delivery-banner{ padding: 16px 20px; }
+    .delivery-banner-inner{ justify-content: center; gap: 14px; }
+    .cd-num{ font-size: 30px; min-width: 38px; }
+    .cd-sep{ font-size: 30px; }
+    .delivery-text{ text-align: center; max-width: 100%; }
+	
 	.testimonial-next,
     .testimonial-prev{
         display: none !important;
@@ -2805,6 +2811,66 @@ h1, h2, h3, h4, h5, h6{
 .timing-block-extend{
 	width: 156px;
 }
+
+
+
+
+.delivery-banner{
+	
+    background: #295ea8;
+    padding: 16px 40px;
+    width: calc(100% - 80px);
+    margin: 0 40px;
+    border-radius: 10px;
+	margin-top: 20px;
+}
+.delivery-banner-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.delivery-left{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.delivery-left i{ font-size: 28px; color: #fff; }
+.delivery-countdown{ display: flex; align-items: center; gap: 4px; }
+.cd-num{
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    min-width: 52px;
+    text-align: center;
+}
+.cd-sep{ font-size: 42px; font-weight: 800; color: #fff; }
+.delivery-text{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 200px;
+    line-height: 1.4;
+}
+.delivery-btn{
+    background: #f5a623;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.delivery-btn:hover{ background: #e09510; }
+
 
 /* ============================================
    COMPREHENSIVE RESPONSIVE OVERHAUL
@@ -3551,7 +3617,27 @@ h1, h2, h3, h4, h5, h6{
 			</div>
 		</div>
 	</section>
-
+	
+	<div class="delivery-banner">
+		<div class="delivery-banner-inner">
+			<div class="delivery-left">
+				<i class="fa-solid fa-truck-fast"></i>
+				<span>Free Next Day<br>Delivery</span>
+			</div>
+			<div class="delivery-countdown">
+				<span class="cd-num" id="cd-hours">00</span>
+				<span class="cd-sep">:</span>
+				<span class="cd-num" id="cd-minutes">00</span>
+				<span class="cd-sep">:</span>
+				<span class="cd-num" id="cd-seconds">43</span>
+			</div>
+			<div class="delivery-text">
+				Save on delivery for orders over £50 with DPD
+			</div>
+			<a href="#" class="delivery-btn">Shop Bestsellers</a>
+		</div>
+	</div>
+	
 	<section class="product-slider-section">
 
 		<h2>Top Picks for Every Detectorist</h2>
@@ -4581,6 +4667,25 @@ h1, h2, h3, h4, h5, h6{
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
+
+(function(){
+    function updateCountdown(){
+        const now = new Date();
+        const midnight = new Date();
+        midnight.setHours(23, 59, 59, 999);
+        const diff = midnight - now;
+        const hours   = Math.floor(diff / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        const pad = n => String(n).padStart(2, '0');
+        const el = id => document.getElementById(id);
+        if(el('cd-hours'))   el('cd-hours').textContent   = pad(hours);
+        if(el('cd-minutes')) el('cd-minutes').textContent = pad(minutes);
+        if(el('cd-seconds')) el('cd-seconds').textContent = pad(seconds);
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+})();
 const swiper = new Swiper(".productSwiper", {
 
     slidesPerView: 4,
@@ -4605,11 +4710,11 @@ const swiper = new Swiper(".productSwiper", {
 
     breakpoints: {
         0:   { slidesPerView: 1, spaceBetween: 10, centeredSlides: false },
-        480: { slidesPerView: 2, spaceBetween: 12, centeredSlides: false },
-        768: { slidesPerView: 3, spaceBetween: 12, centeredSlides: false },
-        1024:{ slidesPerView: 4, spaceBetween: 8, centeredSlides: false },
-    }
-});
+        480: { slidesPerView: 2, spaceBetween: Math.round(window.innerWidth * 0.01) },
+		768: { slidesPerView: 3, spaceBetween: Math.round(window.innerWidth * 0.005) },
+		1024:{ slidesPerView: 4, spaceBetween: Math.round(window.innerWidth * 0.004) }
+			}
+		});
 
 const learnSwiper = new Swiper(".learnSwiper", {
 
