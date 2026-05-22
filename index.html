@@ -1878,7 +1878,11 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
-
+.delivery-icon{
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+}
 
 
 
@@ -2818,11 +2822,11 @@ h1, h2, h3, h4, h5, h6{
 .delivery-banner{
 	
     background: #295ea8;
-    padding: 16px 40px;
+    padding: 11px 40px;
     width: calc(100% - 80px);
     margin: 0 40px;
     border-radius: 10px;
-	margin-top: 20px;
+    margin-top: 20px;
 }
 .delivery-banner-inner{
     display: flex;
@@ -2845,13 +2849,15 @@ h1, h2, h3, h4, h5, h6{
 .delivery-left i{ font-size: 28px; color: #fff; }
 .delivery-countdown{ display: flex; align-items: center; gap: 4px; }
 .cd-num{
-    font-size: 42px;
+    font-size: 57px;
     font-weight: 800;
     color: #fff;
-    min-width: 52px;
+    min-width: 58px;
     text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;                           
 }
-.cd-sep{ font-size: 42px; font-weight: 800; color: #fff; }
+.cd-sep{ font-size: 48px; font-weight: 800; color: #fff; font-family: 'Courier New', Courier, monospace; }
 .delivery-text{
     color: #fff;
     font-size: 14px;
@@ -3621,7 +3627,7 @@ h1, h2, h3, h4, h5, h6{
 	<div class="delivery-banner">
 		<div class="delivery-banner-inner">
 			<div class="delivery-left">
-				<i class="fa-solid fa-truck-fast"></i>
+				<img src="deliveryicon.png" alt="Fast Delivery" class="delivery-icon">
 				<span>Free Next Day<br>Delivery</span>
 			</div>
 			<div class="delivery-countdown">
