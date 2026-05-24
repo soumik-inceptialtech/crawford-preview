@@ -2005,7 +2005,17 @@ h1, h2, h3, h4, h5, h6{
 
 /* RESPONSIVE */
 @media(max-width: 768px){
-
+	.delivery-text {
+        text-align: center;
+        max-width: 100% !important;
+        margin-top: -25px;
+    }
+	#delivery-text{
+	  display:none !important;
+	}
+	#delivery-text-mobile{
+	  display:block !important;
+	}
     .minelab-hero{
         height: auto;
         min-height: 520px;
@@ -2258,6 +2268,14 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media(max-width: 600px){
+	.delivery-countdown {
+		margin-top: -30px;
+	}
+	.delivery-text {
+        text-align: center;
+        max-width: 100%;
+        margin-top: -25px;
+    }
 	.offer-overlay h3, .gift-card h3 {margin-top: -6px;}
 	.offer-card{ margin-top: 12px; height: 360px; border-radius: 0; }  /* added: border-radius: 0 */
     .showrooms-section{
@@ -2430,6 +2448,9 @@ h1, h2, h3, h4, h5, h6{
     max-width: 100%;
 }
 
+#delivery-text{
+  display:block;
+}
 /* BOTTOM */
 .footer-bottom{
     border-top: 1px solid rgba(255,255,255,0.15);
@@ -2876,8 +2897,25 @@ h1, h2, h3, h4, h5, h6{
     white-space: nowrap;
 }
 .delivery-btn:hover{ background: #e09510; }
+.delivery-icon {
+    width: 36px;
+    height: 37px;
+}
+#delivery-text-mobile{
+  display:none;
+}
 
-
+#delivery-text{
+	margin-top: -15px;
+	max-width: 100%;
+}
+.delivery-icon {
+    width: 40px;
+    height: 40px;
+}
+.delivery-left {  padding-left: 31px; gap: 6px;}
+.delivery-btn { margin-top: -14px;
+    margin-left: 55px; }
 /* ============================================
    COMPREHENSIVE RESPONSIVE OVERHAUL
    ============================================ */
@@ -2927,7 +2965,7 @@ h1, h2, h3, h4, h5, h6{
     top: 0;
     right: 0;
 
-    width: 280px;
+    width: 396px;
     height: 100vh;
 
     background: #fff;
@@ -3432,8 +3470,81 @@ h1, h2, h3, h4, h5, h6{
 
     cursor: pointer;
     color: #111;
+	padding-right: 47px;
 }
 
+/* Before */
+.mobile-nav-help a i,
+.mobile-nav-social a i{
+    color: #295ea8;
+    width: 18px;
+    text-align: center;
+}
+
+/* After */
+.mobile-nav-help a i,
+.mobile-nav-social a i{
+    color: #295ea8;
+    width: 32px;
+    height: 32px;
+    background: #f0f4fa;      /* light blue-grey circle */
+    border-radius: 50%;        /* makes it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+.mobile-nav-help,
+.mobile-nav-social{
+    padding: 16px 0 8px;
+    border-top: 1px solid #eee;
+    list-style: none;
+}
+
+.mobile-nav-help,
+.mobile-nav-social{
+    font-size: 13px;
+    font-weight: 800;
+    color: #101b28 !important;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+   /*  text-transform: uppercase;
+    border-bottom: 2px solid #295ea8; */
+    padding-bottom: 6px;
+    display: block;
+	padding-left: 21px;
+}
+
+.mobile-nav-help a,
+.mobile-nav-social a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-decoration: none;
+    border-bottom: none;
+    white-space: nowrap;
+}
+
+.mobile-nav-help a i,
+.mobile-nav-social a i{
+    color: #295ea8;
+    width: 32px;
+    height: 32px;
+    background: #f0f4fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
@@ -3535,16 +3646,11 @@ h1, h2, h3, h4, h5, h6{
 	<ul class="mobile-nav" id="mobile-nav">
 
 		<li class="mobile-nav-top">
-
-        <img src="Crawford_logo.png"
-             alt="Crawfords Metal Detectors Logo"
-             class="mobile-logo">
-
-        <button class="close-menu" id="close-menu">
-            &times;
-        </button>
-
-    </li>
+			<img src="Crawford_logo.png" alt="Crawfords Metal Detectors Logo" class="mobile-logo">
+			<button class="close-menu" id="close-menu">
+				&times;
+			</button>
+		</li>
 		<li><a href="#">Home</a></li>
 		<li><a href="#">Metal Detectors</a></li>
 		<li><a href="#">Brands</a></li>
@@ -3552,6 +3658,22 @@ h1, h2, h3, h4, h5, h6{
 		<li><a href="#">Offers</a></li>
 		<li><a href="#">Finance</a></li>
 		<li><a href="#">Beginner's Guide</a></li>
+		
+		<!-- NEED HELP -->
+		<li class="mobile-nav-help">
+			NEED HELP?
+			<a href="tel:01635597975"><i class="fa-solid fa-phone"></i> Call us 01635597975</a>
+			<a href="mailto:sales@crawfordsmd.com"><i class="fa-solid fa-envelope"></i> sales@crawfordsmd.com</a>
+		</li>
+		
+		<!-- FOLLOW US -->
+		<li class="mobile-nav-social">
+			<h4>FOLLOW US</h4>
+			<a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+			<a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+			<a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+			<a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+		</li>
 	</ul>
 	</header>
 	<section class="hero">
@@ -3628,7 +3750,8 @@ h1, h2, h3, h4, h5, h6{
 		<div class="delivery-banner-inner">
 			<div class="delivery-left">
 				<img src="deliveryicon.png" alt="Fast Delivery" class="delivery-icon">
-				<span>Free Next Day<br>Delivery</span>
+				<span id="delivery-text">Free Next Day<br>Delivery</span>
+				<span id="delivery-text-mobile">Free Next Day Delivery</span>
 			</div>
 			<div class="delivery-countdown">
 				<span class="cd-num" id="cd-hours">00</span>
@@ -4922,8 +5045,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Inject baseline styles directly via JS logic engine
         mobileNav.style.position = 'fixed';
         mobileNav.style.top = '0';
-        mobileNav.style.right = '-280px'; // Off-screen clearance caching
-        mobileNav.style.width = '280px';
+        mobileNav.style.right = '-320px'; // Off-screen clearance caching
+        mobileNav.style.width = '350px';
         mobileNav.style.height = '100vh';
         mobileNav.style.zIndex = '2000';
         mobileNav.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
