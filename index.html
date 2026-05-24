@@ -1796,7 +1796,20 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media(max-width: 600px){
-
+	.delivery-text {
+        text-align: center;
+        max-width: 100% !important;
+        margin-top: -25px;
+    }
+	#delivery-text{
+	  display:none !important;
+	}
+	#delivery-text-mobile{
+	  display:block !important;
+	}
+.cd-num {
+		font-size: 44px !important;
+	}
     .why-grid{
         grid-template-columns: 1fr;
     }
@@ -2005,6 +2018,9 @@ h1, h2, h3, h4, h5, h6{
 
 /* RESPONSIVE */
 @media(max-width: 768px){
+	.cd-num {
+		font-size: 44px;
+	}
 	.delivery-text {
         text-align: center;
         max-width: 100% !important;
@@ -2014,6 +2030,7 @@ h1, h2, h3, h4, h5, h6{
 	  display:none !important;
 	}
 	#delivery-text-mobile{
+	  font-size: 14px;	
 	  display:block !important;
 	}
     .minelab-hero{
