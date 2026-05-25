@@ -1453,7 +1453,10 @@ h1, h2, h3, h4, h5, h6{
 
 /* Responsive */
 @media(max-width:768px){
-
+	.delivery-btn {
+		margin-top: -14px;
+		margin-left: 31px !important;
+	}
 	.learn-prev,
     .learn-next {
         display: none !important;
@@ -1796,6 +1799,10 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media(max-width: 600px){
+	.delivery-btn {
+		margin-top: -14px;
+		margin-left: 30px;
+	}
 	.delivery-text {
         text-align: center;
         max-width: 100% !important;
@@ -2432,7 +2439,7 @@ h1, h2, h3, h4, h5, h6{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
+    gap: 0px;
     flex-wrap: wrap;
 }
 
@@ -2528,11 +2535,14 @@ h1, h2, h3, h4, h5, h6{
 
     .footer-top{
         flex-direction: column;
-        gap: 60px;
+        gap: 50px;
     }
-
     .footer-links{
-        gap: 60px;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 40px 60px;
+        width: 100%;
+        justify-content: space-between;
     }
 
     .footer-middle{
@@ -2547,6 +2557,16 @@ h1, h2, h3, h4, h5, h6{
 
     .footer-logo-area{
         justify-content: flex-start;
+    }
+	
+	.footer-column{
+        flex: 1 1 30%;           /* Makes 3 columns */
+        min-width: 140px;
+    }
+	
+	.footer-about{
+        order: -1;
+        max-width: 100%;
     }
 }
 
@@ -2582,6 +2602,27 @@ h1, h2, h3, h4, h5, h6{
     .footer-bottom{
         flex-direction: column;
         text-align: center;
+    }
+	
+	.footer-top{
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+    }
+
+    .footer-links{
+        gap: 35px 40px;
+    }
+    
+    .footer-column{
+        flex: 1 1 27%;           /* 2 columns on very small screens */
+        min-width: 0px;
+    }
+
+    .footer-about{
+        flex: 1 1 100%;          /* Full width on very small screens */
+        order: -1;
     }
 }
 .whatsapp-btn{
@@ -2833,6 +2874,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @media(max-width:768px){
+	.shop-way-section {
+		padding-bottom: 31px !important;
+	}
 
     .testimonial-title{
         font-size:24px;
@@ -3207,7 +3251,7 @@ h1, h2, h3, h4, h5, h6{
 		.category-tabs-mobile button {
 			border: none;
 			background: none;
-			font-size: 15px;
+			font-size: 12px;
 			font-weight: 700;
 			cursor: pointer;
 		}
@@ -3378,7 +3422,7 @@ h1, h2, h3, h4, h5, h6{
     /* Footer */
     .footer-container{ padding: 40px 16px 30px; }
     .footer-column h3{ font-size: 20px; }
-    .footer-column a{ font-size: 15px; }
+    .footer-column a{ font-size: 11px; }
     .footer-about p{ font-size: 15px; }
     .footer-links{ flex-direction: column; gap: 30px; }
     .social-icons{ gap: 30px; }
@@ -3399,6 +3443,8 @@ h1, h2, h3, h4, h5, h6{
 		align-items: flex-start;
 		gap: 3px;
 	}
+	
+	
 }
 /* Mobile nav top row (search + icons inside drawer) */
 .mobile-nav-top{
@@ -3799,7 +3845,7 @@ h1, h2, h3, h4, h5, h6{
 			<button class="active">ALL</button>
 			<button>BEGINNERS</button>
 			<button>ALL-ROUNDERS</button>
-			<button>GRADE</button>
+			<button>PROFESSIONAL</button>
 		</div>
 
 		<div class="swiper productSwiper">
