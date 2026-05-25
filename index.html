@@ -18,6 +18,7 @@
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *{
@@ -49,6 +50,13 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'Gotham', Arial, sans-serif;
 }
 
+p {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 400;           /* Regular weight by default */
+    line-height: 1.6;
+	font-size:12px;
+}
+
 /* Top Bar */
 .top-bar{
     background:#295ea8;
@@ -56,7 +64,16 @@ h1, h2, h3, h4, h5, h6{
 	font-size:13px;
 
 }
+.nav-menu {
+    font-family: 'League Spartan', sans-serif;
+}
 
+.nav-menu a {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
 .top-bar .container{
     display:flex;
     justify-content:center;
@@ -127,7 +144,7 @@ h1, h2, h3, h4, h5, h6{
 .nav-menu a{
     color:#101b28;
     text-decoration:none;
-    font-size:15px;
+    font-size:16px;
     font-weight:500;
     transition:.3s;
 }
@@ -441,6 +458,16 @@ h1, h2, h3, h4, h5, h6{
 }
 /* MOBILE */
 @media(max-width:768px){
+	.hero-features {
+		margin-top: -75px;
+		margin-left: 144px;
+	}
+	.hero-features li i {
+		font-size: 11px;
+	}
+	.hero-features li {
+		font-size: 9px;
+        }
 
     /* Keep nav-wrapper as a single row — logo left, hamburger right */
     .navbar .container{
@@ -3259,6 +3286,13 @@ h1, h2, h3, h4, h5, h6{
 
 /* --- MOBILE: 600px --- */
 @media(max-width: 600px){
+		.hero-features {
+			margin-top: -75px;
+			margin-left: 144px;
+		}
+		.hero-features li i {
+			font-size: 11px !important;
+		}
         .learn-slider-wrapper{
 			margin-left: -38px;
 		}
@@ -3327,7 +3361,7 @@ h1, h2, h3, h4, h5, h6{
     .hero-overlay{ padding: 28px 18px; }
     .hero-overlay h1{ font-size: 24px; margin-bottom: 12px;}
     .hero-overlay p{ width: 60%; font-size: 9px; }
-    .hero-features li{ font-size: 14px; }
+    .hero-features li{ font-size: 11px; }
     .bottom-strip{ font-size: 14px; flex-direction: column; gap: 6px; text-align: center; padding: 12px; }
 
     /* Stats: stack vertically */
