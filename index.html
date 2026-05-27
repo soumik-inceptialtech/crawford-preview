@@ -463,7 +463,7 @@ p {
 		margin-left: 144px;
 	}
 	.hero-features li i {
-		font-size: 11px;
+		font-size: 10px;
 	}
 	.hero-features li {
 		font-size: 9px;
@@ -1858,12 +1858,14 @@ p {
     }
 	#delivery-text{
 	  display:none !important;
+	  font-size: 14px;
 	}
 	#delivery-text-mobile{
 	  display:block !important;
 	}
-.cd-num {
+	.cd-num {
 		font-size: 44px !important;
+		margin-right: -13px;
 	}
     .why-grid{
         grid-template-columns: 1fr;
@@ -2085,7 +2087,7 @@ p {
 	  display:none !important;
 	}
 	#delivery-text-mobile{
-	  font-size: 14px;	
+	  font-size: 11px;	
 	  display:block !important;
 	}
     .minelab-hero{
@@ -2297,6 +2299,7 @@ p {
 
 .swiper-wrapper {margin-left: 30px;}
 @media(max-width: 992px){
+	
 	/* Why crawfords */
     .why-grid{ grid-template-columns: 1fr; gap: 12px; padding: 0 16px; }
     .why-heading h2{ font-size: 22px; }
@@ -2340,6 +2343,7 @@ p {
 }
 
 @media(max-width: 600px){
+	.learn-card { max-width: 343px ; }
 	.delivery-countdown {
 		margin-top: -30px;
 	}
@@ -2619,13 +2623,50 @@ p {
 }
 
 @media(max-width: 768px){
-	
+
+	.showrooms-section{
+        padding: 40px 16px 60px !important;   /* Reduced top padding */
+    }
+    
+    .showrooms-title{
+        padding-top: 30px !important;         /* Much less top space */
+        font-size: 34px;
+        margin-bottom: 35px;
+    }
+    
+    .showroom-card{
+        padding: 28px 24px 70px;
+        margin-bottom: 20px;
+    }
+    
+    .timing-grid{
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .direction-btn{
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+	.learn-card { max-width: 328px; }
 	.delivery-banner{ padding: 16px 20px; }
     .delivery-banner-inner{ justify-content: center; gap: 14px; }
     .cd-num{ font-size: 30px; min-width: 38px; }
     .cd-sep{ font-size: 30px; }
-    .delivery-text{ text-align: center; max-width: 100%; }
-	
+    .delivery-text{ text-align: center; max-width: 100%; font-size: 14px !important;}
+	.delivery-left {
+		padding-left: 14px !important;
+		gap: 6px;
+	}
+	.delivery-btn {
+        margin-top: -14px;
+        margin-left: 16px !important;
+    }
 	.testimonial-next,
     .testimonial-prev{
         display: none !important;
@@ -3196,7 +3237,7 @@ p {
     .hero-overlay h1{ font-size: 46px; }
     .hero-overlay p{ font-size: 9px; max-width: 60g%; }
     .hero-buttons{ flex-direction: column; gap: 10px; }
-    .btn{ font-size: 7px; padding: 7px 22px; width: 39%;height: 22px;}
+    .btn{ font-size: 7px; padding: 7px 22px; width: 35%;height: 22px;}
 
     /* Stats: 2-col grid */
     .stats-container{
@@ -3289,9 +3330,10 @@ p {
 		.hero-features {
 			margin-top: -75px;
 			margin-left: 144px;
+			line-height: 1px;
 		}
 		.hero-features li i {
-			font-size: 11px !important;
+			font-size: 10px !important;
 		}
         .learn-slider-wrapper{
 			margin-left: -38px;
@@ -3361,7 +3403,7 @@ p {
     .hero-overlay{ padding: 28px 18px; }
     .hero-overlay h1{ font-size: 24px; margin-bottom: 12px;}
     .hero-overlay p{ width: 60%; font-size: 9px; }
-    .hero-features li{ font-size: 11px; }
+    .hero-features li{ font-size: 10px; }
     .bottom-strip{ font-size: 14px; flex-direction: column; gap: 6px; text-align: center; padding: 12px; }
 
     /* Stats: stack vertically */
